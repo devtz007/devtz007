@@ -9,16 +9,20 @@ url = f'https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key={api
 response = requests.get(url)
 data = response.json()
 
-# Fetch repository code percentages
-url_repos = f'https://wakatime.com/api/v1/users/current/commits?api_key={api_key}'
-response_repos = requests.get(url_repos)
-data_repos = response_repos.json()
+# Fetch repository code percentages with error handling
+try:
+    url_repos = f'https://wakatime.com/api/v1/users/current/commits?api_key={api_key}'
+    response_repos = requests.get(url_repos)
+    data_repos = response_repos.json()
+
+    # Extract repository data
+    repos = data_repos.get('data', [])  # Use .get() to avoid KeyError
+except KeyError as e:
+    print(f"Error: Missing key in API response - {str(e)}")
+    repos = []
 
 # Extract languages and their percentages from WakaTime stats
-languages = data['data']['languages']
-
-# Extract repository data
-repos = data_repos['data']
+languages = data['data']['languages'] if 'data' in data else []
 
 # Generate HTML content for custom section
 html_content = '''
