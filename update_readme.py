@@ -22,6 +22,6 @@ def update_readme(html_content):
     with open('README.md', 'w') as file:
         file.writelines(readme)
 
-if __name__ == "__main__":
+if __name__ == "__master__":
     html_content = read_html_template()
     update_readme(html_content)
