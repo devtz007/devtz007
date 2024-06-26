@@ -14,16 +14,30 @@ languages = data['data']['languages']
 
 # Generate HTML content with custom theme
 html_content = '''
-<div id="wakatime-stats" style="font-family: Arial, sans-serif;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WakaTime Stats</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .language-stats div { margin-bottom: 10px; }
+  .language-stats span { display: inline-block; }
+  .language-bar { display: inline-block; width: 200px; height: 20px; border-radius: 5px; }
+</style>
+</head>
+<body>
+<div id="wakatime-stats">
   <h2>WakaTime Stats</h2>
   <div class="language-stats">
 '''
 
 for language in languages:
     html_content += f'''
-    <div style="margin-bottom: 10px;">
-      <span style="display: inline-block; width: 100px;">{language['name']}</span>
-      <div style="display: inline-block; width: 200px; background: linear-gradient(90deg, #ff4500 {language['percent']}%, #ddd {language['percent']}%); height: 20px; border-radius: 5px;"></div>
+    <div>
+      <span style="width: 100px;">{language['name']}</span>
+      <div class="language-bar" style="background: linear-gradient(90deg, #ff4500 {language['percent']}%, #ddd {language['percent']}%);"></div>
       <span style="margin-left: 10px;">{language['percent']}%</span>
     </div>
     '''
@@ -33,11 +47,18 @@ html_content += '''
   <script>
     // Add your JavaScript here if needed
   </script>
-  <style>
-    /* Add your CSS here if needed */
-  </style>
 </div>
+</body>
+</html>
 '''
+
+# Write the HTML content to a file
+with open('wakatime_stats.html', 'w') as file:
+    file.write(html_content)
+
+# Read the HTML file content
+with open('wakatime_stats.html', 'r') as file:
+    html_content = file.read()
 
 # Read the current README
 with open('README.md', 'r') as file:
