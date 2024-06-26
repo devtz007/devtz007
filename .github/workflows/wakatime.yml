@@ -1,11 +1,9 @@
-name: Update Custom Stats
+name: Update README with HTML
 
 on:
   push:
     branches:
       - master
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
   update-readme:
@@ -14,25 +12,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          pip install requests
-
-      - name: Update README with Custom Stats
-        env:
-          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-        run: |
-          python update_readme.py
+      - name: Update README
+        run: python update_readme.py
 
       - name: Commit and push if README updated
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add README.md custom_stats.html
-          git commit -m 'Update custom stats'
+          git add README.md
+          git commit -m 'Update README with custom HTML'
           git push

@@ -1,81 +1,27 @@
-import requests
-import os
+# update_readme.py
 
-# Get WakaTime API key from environment variables
-api_key = os.getenv('WAKATIME_API_KEY')
+def read_html_template():
+    with open('templates/index.html', 'r') as file:
+        return file.read()
 
-# Fetch WakaTime stats for last 7 days
-url = f'https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key={api_key}'
-response = requests.get(url)
-data = response.json()
+def update_readme(html_content):
+    # Read the current README
+    with open('README.md', 'r') as file:
+        readme = file.readlines()
 
-# Fetch repository code percentages with error handling
-try:
-    url_repos = f'https://wakatime.com/api/v1/users/current/commits?api_key={api_key}'
-    response_repos = requests.get(url_repos)
-    data_repos = response_repos.json()
+    # Update the section where HTML should be inserted
+    start_marker = '<!--START_SECTION:index.html-->\n'
+    end_marker = '<!--END_SECTION:index.html-->\n'
+    start_index = readme.index(start_marker) + 1
+    end_index = readme.index(end_marker)
 
-    # Extract repository data
-    repos = data_repos.get('data', [])  # Use .get() to avoid KeyError
-except KeyError as e:
-    print(f"Error: Missing key in API response - {str(e)}")
-    repos = []
+    # Replace existing content with new HTML content
+    readme[start_index:end_index] = [html_content + '\n']
 
-# Extract languages and their percentages from WakaTime stats
-languages = data['data']['languages'] if 'data' in data else []
+    # Write the updated README
+    with open('README.md', 'w') as file:
+        file.writelines(readme)
 
-# Generate HTML content for custom section
-html_content = '''
-<div id="custom-stats" style="font-family: Arial, sans-serif;">
-  <h2>Custom Stats</h2>
-  <div class="language-stats">
-    <h3>Code Time (Last 7 Days)</h3>
-    <ul>
-'''
-
-# Add code time data
-for language in languages:
-    html_content += f'''
-      <li>{language['name']}: {language['text']}</li>
-    '''
-
-html_content += '''
-    </ul>
-    <h3>Repository Code Percentages</h3>
-    <ul>
-'''
-
-# Add repository code percentages
-for repo in repos:
-    html_content += f'''
-      <li>{repo['repo']}: {repo['percent']}%</li>
-    '''
-
-html_content += '''
-    </ul>
-  </div>
-  <style>
-    /* Add your CSS here */
-    #custom-stats {
-      background-color: #f0f0f0;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    .language-stats {
-      margin-top: 20px;
-    }
-    .language-stats ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    .language-stats ul li {
-      margin-bottom: 10px;
-    }
-  </style>
-</div>
-'''
-
-# Write the HTML content to a file
-with open('custom_stats.html', 'w') as file:
-    file.write(html_content)
+if __name__ == "__main__":
+    html_content = read_html_template()
+    update_readme(html_content)

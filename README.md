@@ -1,9 +1,8 @@
-# Hi there, I'm [Your Name] 👋
+# My Profile
 
-## Custom Stats
-<!--START_SECTION:custom_stats-->
-<!--END_SECTION:custom_stats-->
+<!--START_SECTION:index.html-->
+<!--END_SECTION:index.html-->
 
-## My Coding Activity
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
+## About Me
+
+Welcome to my profile!
