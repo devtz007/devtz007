@@ -1,4 +1,4 @@
-name: Update README with HTML
+name: Update README with custom HTML
 
 on:
   push:
@@ -12,8 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Update README
-        run: python update_readme.py
+      - name: Install Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Run update_readme.py
+        run: |
+          python update_readme.py
 
       - name: Commit and push if README updated
         run: |
