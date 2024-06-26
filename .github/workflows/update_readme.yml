@@ -3,7 +3,7 @@ name: Update README with custom HTML
 on:
   push:
     branches:
-      - master
+      - master  # Change 'main' to 'master' if your branch is named 'master'
 
 jobs:
   update-readme:
@@ -21,10 +21,16 @@ jobs:
         run: |
           python update_readme.py
 
+      - name: Check if README.md changed
+        id: check_changes
+        run: |
+          git diff --quiet || echo "README.md has changes"
+        
       - name: Commit and push if README updated
+        if: steps.check_changes.outputs.code == 'README.md has changes'
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add README.md
           git commit -m 'Update README with custom HTML'
-          git push
+          git push origin master  # Push changes to the 'master' branch
