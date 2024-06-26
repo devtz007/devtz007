@@ -3,7 +3,7 @@ name: Update WakaTime Stats
 on:
   push:
     branches:
-      - main
+      - master
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight UTC
 
