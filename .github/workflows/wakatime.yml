@@ -1,4 +1,4 @@
-name: Update WakaTime Stats
+name: Update Custom Stats
 
 on:
   push:
@@ -23,7 +23,7 @@ jobs:
         run: |
           pip install requests
 
-      - name: Update README
+      - name: Update README with Custom Stats
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
@@ -33,6 +33,6 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add README.md wakatime_stats.html
-          git commit -m 'Update WakaTime stats' || echo 'No changes to commit'
+          git add README.md custom_stats.html
+          git commit -m 'Update custom stats'
           git push
