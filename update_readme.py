@@ -5,6 +5,9 @@ import requests
 # Fetch WakaTime API key from environment variables
 WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
 
+if not WAKATIME_API_KEY:
+    raise ValueError("WAKATIME_API_KEY environment variable is not set")
+
 # Fetch data from WakaTime API
 def fetch_wakatime_data():
     url = 'https://wakatime.com/api/v1/users/current/status_bar/today'
@@ -46,8 +49,12 @@ def update_readme(html_content):
 
     start_marker = '<!--START_SECTION:index.html-->\n'
     end_marker = '<!--END_SECTION:index.html-->\n'
-    start_index = readme.index(start_marker) + 1
-    end_index = readme.index(end_marker)
+    
+    try:
+        start_index = readme.index(start_marker) + 1
+        end_index = readme.index(end_marker)
+    except ValueError:
+        raise ValueError("Markers for the HTML section not found in README.md")
 
     readme[start_index:end_index] = [html_content + '\n']
 
@@ -55,10 +62,21 @@ def update_readme(html_content):
         file.writelines(readme)
 
 def main():
+    print("Fetching WakaTime data...")
     data = fetch_wakatime_data()
+    print("Data fetched:", data)
+
+    print("Reading HTML template...")
     template = read_html_template()
+    print("Template read")
+
+    print("Injecting data into HTML template...")
     html_content = inject_data_into_html(template, data)
+    print("HTML content generated:", html_content)
+
+    print("Updating README.md...")
     update_readme(html_content)
+    print("README.md updated")
 
 if __name__ == "__main__":
     main()

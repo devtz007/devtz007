@@ -31,7 +31,7 @@ jobs:
         id: check_changes
         run: |
           git diff --quiet || echo "README.md has changes"
-      
+        
       - name: Commit and push if README updated
         if: steps.check_changes.outputs.code == 'README.md has changes'
         run: |
