@@ -40,9 +40,8 @@ def construct_svg_content(data):
     return svg_content
 
 # Update the README.md with SVG content
-def update_readme_with_svg():
+def update_readme_with_svg(svg_content):
     try:
-        svg_content = read_svg_from_file()
         html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
         
         with open('README.md', 'r', encoding='utf-8') as file:
