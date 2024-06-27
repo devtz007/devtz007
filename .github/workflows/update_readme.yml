@@ -3,7 +3,7 @@ name: Update README with custom HTML
 on:
   push:
     branches:
-      - master  # Adjust branch name as per your default branch
+      - master
 
 jobs:
   update-readme:
@@ -37,6 +37,10 @@ jobs:
         run: |
           git diff --quiet -- README.md || echo "README.md has changes"
 
+      - name: Stage README.md for commit
+        run: |
+          git add README.md
+
       - name: Commit and push changes if README updated
         if: steps.check_changes.outputs.code != 'README.md has changes'
         run: |
@@ -49,4 +53,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: html-artifacts
-          path: README.md  # Adjust the path as needed
+          path: README.md 
