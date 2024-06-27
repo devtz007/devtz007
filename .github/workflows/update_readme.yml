@@ -10,8 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -19,8 +18,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          pip install requests
+        run: pip install requests
 
       - name: Run update_readme.py
         env:
@@ -29,12 +27,10 @@ jobs:
 
       - name: Check for changes in README.md
         id: check_changes
-        run: |
-          git diff --quiet -- README.md || echo "README.md has changes"
+        run: git diff --quiet -- README.md || echo "README.md has changes"
 
       - name: Stage README.md for commit
-        run: |
-          git add README.md
+        run: git add README.md
 
       - name: Commit and push changes if README updated
         if: steps.check_changes.outputs.code != 'README.md has changes'
@@ -44,8 +40,3 @@ jobs:
           git commit -am 'Update README with custom HTML'
           git push origin ${{ github.ref }}
 
-      - name: Archive artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: html-artifacts
-          path: README.md
