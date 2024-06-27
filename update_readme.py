@@ -11,7 +11,7 @@ if not WAKATIME_API_KEY:
 
 # Fetch data from WakaTime API
 def fetch_wakatime_data():
-    url = 'https://wakatime.com/api/v1/users/current/status_bar/today'
+    url = 'https://wakatime.com/api/v1/users/current/all_time_since_today'
     headers = {
         'Authorization': f'Basic {base64.b64encode(f"{WAKATIME_API_KEY}:".encode()).decode()}'
     }

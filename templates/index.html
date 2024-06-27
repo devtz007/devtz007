@@ -1,58 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>State Reader</title>
-  <style>
-  </style>
-</head>
-<body>
-  <div class="state-container">
-    <h2>State Reader</h2>
-    <div id="result">
-      <div id="totalCodingTime"></div>
-      <div id="codingHours"></div>
-      <div id="codingMinutes"></div>
-      <ul id="languagesList"></ul>
-      <ul id="projectsList"></ul>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>State Reader</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="state-container">
+      <h2>State Reader</h2>
+      <div id="result"></div>
     </div>
-  </div>
 
-  <script>
-    // Injected JSON data
-    const jsonData = "{{jsonData}}";
+    <script>
+      // Injected JSON data
+      const jsonData = "{{jsonData}}";
 
-    // Parse JSON data
-    const data = JSON.parse(jsonData.replace(/\\"/g, '"'));
+      // Parse JSON data
+      const data = JSON.parse(jsonData.replace(/\\"/g, '"'));
 
-    // Function to dynamically generate content
-    function generateContent(data) {
-      document.getElementById("totalCodingTime").textContent = data.data.grand_total.text;
-      document.getElementById("codingHours").textContent = `${data.data.categories[0].hours} hrs`;
-      document.getElementById("codingMinutes").textContent = `${data.data.categories[0].minutes} mins`;
-
-      // Update languages list
-      const languagesList = document.getElementById("languagesList");
-      languagesList.innerHTML = "";
-      data.data.languages.forEach((lang) => {
-        const li = document.createElement("li");
-        li.textContent = `${lang.name}: ${lang.text}`;
-        languagesList.appendChild(li);
-      });
-
-      // Update projects list
-      const projectsList = document.getElementById("projectsList");
-      projectsList.innerHTML = "";
-      data.data.projects.forEach((proj) => {
-        const li = document.createElement("li");
-        li.textContent = `${proj.name}: ${proj.text}`;
-        projectsList.appendChild(li);
-      });
-    }
-
-    // Call generateContent function to populate the HTML
-    generateContent(data);
-  </script>
-</body>
+      // Function to dynamically generate content based on 'data'
+      const Result = document.getElementById("result");
+      // Example usage:
+      Result.innerHTML += `
+    <div class="daily-average">
+      ${data.dailyAverage}
+    </div>
+    <div class="digital">
+      ${data.digital}
+    </div>
+    <div class="dates-range">
+      <div class="start">
+        ${data.startDate}
+      </div>
+      <div class="end">
+        ${data.endDate}
+      </div>
+    </div>
+    <div class="text">
+      ${data.text}
+    </div>
+  `;
+    </script>
+  </body>
 </html>
