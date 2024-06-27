@@ -20,15 +20,24 @@ def fetch_wakatime_data():
 
 # Construct SVG content
 def construct_svg_content(data):
+    # Access nested data correctly
+    data = data.get('data', {})
+    daily_average = data.get('daily_average', 'N/A')
+    digital = data.get('digital', 'N/A')
+    start_date = data.get('range', {}).get('start_date', 'N/A')
+    end_date = data.get('range', {}).get('end_date', 'N/A')
+    text = data.get('text', 'N/A')
+
     svg_content = f"""
     <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100" height="100">
             <div xmlns="http://www.w3.org/1999/xhtml">
                 <h2>WakaTime Stats</h2>
-                <p>Total Time: {data['digital']}</p>
-                <p>Start Date: {data['range']['start_date']}</p>
-                <p>End Date: {data['range']['end_date']}</p>
-                <p>Text: {data['text']}</p>
+                <p>Daily Average: {daily_average}</p>
+                <p>Total Time: {digital}</p>
+                <p>Start Date: {start_date}</p>
+                <p>End Date: {end_date}</p>
+                <p>Text: {text}</p>
             </div>
         </foreignObject>
     </svg>
