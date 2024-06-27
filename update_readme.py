@@ -56,25 +56,25 @@ def construct_html_content(data):
 
       <script>
         const jsonData = '{json.dumps(data).replace("'", "\\'")}';
-        const data = JSON.parse(jsonData.replace(/\\\\"/g, '"'));
+        const parsedData = JSON.parse(jsonData.replace(/\\\\"/g, '"'));
         const Result = document.getElementById("result");
-        Result.innerHTML += `
+        Result.innerHTML = `
           <div class="daily-average">
-            ${data.dailyAverage}
+            ${parsedData.dailyAverage}
           </div>
           <div class="digital">
-            ${data.digital}
+            ${parsedData.digital}
           </div>
           <div class="dates-range">
             <div class="start">
-              ${data.startDate}
+              ${parsedData.startDate}
             </div>
             <div class="end">
-              ${data.endDate}
+              ${parsedData.endDate}
             </div>
           </div>
           <div class="text">
-            ${data.text}
+            ${parsedData.text}
           </div>
         `;
       </script>
@@ -85,26 +85,29 @@ def construct_html_content(data):
 
 # Update the README.md with the new HTML content
 def update_readme(html_content):
-    with open('README.md', 'r', encoding='utf-8') as file:
-        readme = file.readlines()
-
-    start_marker = '<!--START_SECTION:index.html-->\n'
-    end_marker = '<!--END_SECTION:index.html-->\n'
-    
     try:
+        with open('README.md', 'r', encoding='utf-8') as file:
+            readme = file.readlines()
+        
+        start_marker = '<!--START_SECTION:index.html-->\n'
+        end_marker = '<!--END_SECTION:index.html-->\n'
+        
         start_index = readme.index(start_marker) + 1
         end_index = readme.index(end_marker)
+        
+        readme[start_index:end_index] = [html_content + '\n']
+        
+        with open('README.md', 'w', encoding='utf-8') as file:
+            file.writelines(readme)
+        
     except ValueError:
         raise ValueError("Markers for the HTML section not found in README.md")
-
-    readme[start_index:end_index] = [html_content + '\n']
-
-    with open('README.md', 'w', encoding='utf-8') as file:
-        file.writelines(readme)
+    except Exception as e:
+        raise RuntimeError(f"Failed to update README.md: {e}")
 
 def main():
-    print("Fetching WakaTime data...")
     try:
+        print("Fetching WakaTime data...")
         data = fetch_wakatime_data()
         print("Data fetched successfully:", data)
 
