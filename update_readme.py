@@ -22,15 +22,7 @@ def fetch_wakatime_data():
 # Construct HTML content with injected data
 def construct_html_content(data):
     html_content = f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>State Reader</title>
-      <style></style>
-    </head>
-    <body>
+
       <div class="state-container">
         <h2>State Reader</h2>
         <div id="result">
@@ -54,32 +46,6 @@ def construct_html_content(data):
         </div>
       </div>
 
-      <script>
-        const jsonData = '{json.dumps(data).replace("'", "\\'")}';
-        const parsedData = JSON.parse(jsonData.replace(/\\\\"/g, '"'));
-        const Result = document.getElementById("result");
-        Result.innerHTML = `
-          <div class="daily-average">
-            ${parsedData.dailyAverage}
-          </div>
-          <div class="digital">
-            ${parsedData.digital}
-          </div>
-          <div class="dates-range">
-            <div class="start">
-              ${parsedData.startDate}
-            </div>
-            <div class="end">
-              ${parsedData.endDate}
-            </div>
-          </div>
-          <div class="text">
-            ${parsedData.text}
-          </div>
-        `;
-      </script>
-    </body>
-    </html>
     """
     return html_content
 
