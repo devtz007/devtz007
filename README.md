@@ -19,10 +19,10 @@
 
 ### 📈 **Coding Statistics Tracked by WakaTime:**
 
-<div align="center">
-  <!--START_SECTION:wakatime_all_time_since_today-->
-  <!--END_SECTION:wakatime_all_time_since_today-->
-</div>
+
+<!--START_SECTION:wakatime_all_time_since_today-->
+<!--END_SECTION:wakatime_all_time_since_today-->
+
 
 ### 🌐 **Connect with Me:**
 
