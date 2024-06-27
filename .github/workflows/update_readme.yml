@@ -3,16 +3,17 @@ name: Update README with custom HTML
 on:
   push:
     branches:
-      - master
+      - master  # Adjust branch name as per your default branch
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install Python
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
@@ -21,22 +22,31 @@ jobs:
         run: |
           pip install requests
 
-      - name: Run update_readme.py
+      - name: Run update_readme.py and capture output
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
-          python update_readme.py
+          python update_readme.py > output.log  # Redirect Python script output to a log file
 
-      - name: Check if README.md changed
+      - name: View generated README content
+        run: |
+          cat README.md
+
+      - name: Check for changes in README.md
         id: check_changes
         run: |
-          git diff --quiet || echo "README.md has changes"
-        
-      - name: Commit and push if README updated
-        if: steps.check_changes.outputs.code == 'README.md has changes'
+          git diff --quiet -- README.md || echo "README.md has changes"
+
+      - name: Commit and push changes if README updated
+        if: steps.check_changes.outputs.code != 'README.md has changes'
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
-          git add README.md
-          git commit -m 'Update README with custom HTML'
-          git push origin master
+          git commit -am 'Update README with custom HTML'
+          git push origin ${{ github.ref }}
+
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: html-artifacts
+          path: README.md  # Adjust the path as needed

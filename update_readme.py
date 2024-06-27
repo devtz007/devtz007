@@ -19,22 +19,73 @@ def fetch_wakatime_data():
     response.raise_for_status()
     return response.json()
 
-# Read the HTML template from index.html
-def read_html_template():
-    with open('templates/index.html', 'r') as file:
-        return file.read()
+# Construct HTML content with injected data
+def construct_html_content(data):
+    html_content = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>State Reader</title>
+      <style></style>
+    </head>
+    <body>
+      <div class="state-container">
+        <h2>State Reader</h2>
+        <div id="result">
+          <div class="daily-average">
+            {data['dailyAverage']}
+          </div>
+          <div class="digital">
+            {data['digital']}
+          </div>
+          <div class="dates-range">
+            <div class="start">
+              {data['startDate']}
+            </div>
+            <div class="end">
+              {data['endDate']}
+            </div>
+          </div>
+          <div class="text">
+            {data['text']}
+          </div>
+        </div>
+      </div>
 
-# Inject the JSON data into the HTML template
-def inject_data_into_html(template, data):
-    # Convert data to JSON string and escape double quotes
-    json_data = json.dumps(data).replace('"', '\\"')
-    # Inject the JSON data into a script tag
-    html_content = template.replace('{{jsonData}}', json_data)
+      <script>
+        const jsonData = '{json.dumps(data).replace("'", "\\'")}';
+        const data = JSON.parse(jsonData.replace(/\\\\"/g, '"'));
+        const Result = document.getElementById("result");
+        Result.innerHTML += `
+          <div class="daily-average">
+            ${data.dailyAverage}
+          </div>
+          <div class="digital">
+            ${data.digital}
+          </div>
+          <div class="dates-range">
+            <div class="start">
+              ${data.startDate}
+            </div>
+            <div class="end">
+              ${data.endDate}
+            </div>
+          </div>
+          <div class="text">
+            ${data.text}
+          </div>
+        `;
+      </script>
+    </body>
+    </html>
+    """
     return html_content
 
 # Update the README.md with the new HTML content
 def update_readme(html_content):
-    with open('README.md', 'r') as file:
+    with open('README.md', 'r', encoding='utf-8') as file:
         readme = file.readlines()
 
     start_marker = '<!--START_SECTION:index.html-->\n'
@@ -48,7 +99,7 @@ def update_readme(html_content):
 
     readme[start_index:end_index] = [html_content + '\n']
 
-    with open('README.md', 'w') as file:
+    with open('README.md', 'w', encoding='utf-8') as file:
         file.writelines(readme)
 
 def main():
@@ -57,12 +108,8 @@ def main():
         data = fetch_wakatime_data()
         print("Data fetched successfully:", data)
 
-        print("Reading HTML template...")
-        template = read_html_template()
-        print("Template read successfully")
-
-        print("Injecting data into HTML template...")
-        html_content = inject_data_into_html(template, data)
+        print("Constructing HTML content...")
+        html_content = construct_html_content(data)
         print("HTML content generated successfully")
 
         print("Updating README.md...")
