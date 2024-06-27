@@ -47,12 +47,16 @@ def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
         file.write(svg_content)
     print(f"SVG saved to {filename}")
 
-# Update the README.md with SVG URL
+# Read SVG content from file
+def read_svg_from_file(filename='wakatime-stats.svg'):
+    with open(filename, 'r', encoding='utf-8') as file:
+        return file.read()
+
+# Update the README.md with SVG content
 def update_readme_with_svg():
     try:
-        username = "devtz007"
-        svg_url = f"./wakatime-stats.svg"
-        html_img_tag = f'<div style="width: 100%;">\n  <img src="{svg_url}" style="width: 100%;" alt="WakaTime Stats">\n</div>\n'
+        svg_content = read_svg_from_file()
+        html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
         
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
@@ -91,7 +95,7 @@ def main():
         print("Saving SVG to file...")
         save_svg_to_file(svg_content)
 
-        print("Updating README.md with SVG URL...")
+        print("Updating README.md with SVG content...")
         update_readme_with_svg()
 
         print("README.md updated successfully")
