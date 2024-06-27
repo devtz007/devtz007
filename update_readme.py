@@ -18,7 +18,7 @@ def fetch_wakatime_data():
     response.raise_for_status()
     return response.json()
 
-# Construct simplified HTML content with injected data
+# Construct HTML content with inline CSS
 def construct_html_content(data):
     # Access nested data correctly
     data = data.get('data', {})
@@ -29,14 +29,14 @@ def construct_html_content(data):
     text = data.get('text', 'N/A')
 
     html_content = f"""
-      <div>
-        <h2>WakaTime Stats</h2>
-        <p>Daily Average: {daily_average}</p>
-        <p>Total Time: {digital}</p>
-        <p>Start Date: {start_date}</p>
-        <p>End Date: {end_date}</p>
-        <p>Text: {text}</p>
-      </div>
+    <div style="font-family: Arial, sans-serif;">
+        <h2 style="color: #2e6c80;">WakaTime Stats</h2>
+        <p><strong>Daily Average:</strong> {daily_average}</p>
+        <p><strong>Total Time:</strong> {digital}</p>
+        <p><strong>Start Date:</strong> {start_date}</p>
+        <p><strong>End Date:</strong> {end_date}</p>
+        <p><strong>Text:</strong> {text}</p>
+    </div>
     """
     return html_content
 
@@ -53,7 +53,7 @@ def update_readme(html_content):
         end_marker = '<!--END_SECTION:wakatime-->\n'
         
         if start_marker not in readme or end_marker not in readme:
-            raise ValueError("Markers for the HTML section not found in README.md")
+            raise ValueError("Markers for the section not found in README.md")
 
         start_index = readme.index(start_marker) + 1
         end_index = readme.index(end_marker)
