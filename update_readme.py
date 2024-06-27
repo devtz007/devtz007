@@ -39,17 +39,6 @@ def construct_svg_content(data):
     </svg>"""
     return svg_content
 
-# Save SVG content to file
-def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write(svg_content)
-    print(f"SVG saved to {filename}")
-
-# Read SVG content from file
-def read_svg_from_file(filename='wakatime-stats.svg'):
-    with open(filename, 'r', encoding='utf-8') as file:
-        return file.read()
-
 # Update the README.md with SVG content
 def update_readme_with_svg():
     try:
@@ -89,9 +78,6 @@ def main():
         print("Constructing SVG content...")
         svg_content = construct_svg_content(data)
         print("SVG content generated successfully")
-
-        print("Saving SVG to file...")
-        save_svg_to_file(svg_content)
 
         print("Updating README.md with SVG content...")
         update_readme_with_svg()
