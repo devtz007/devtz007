@@ -1,7 +1,6 @@
 import os
 import base64
 import requests
-import json
 
 # Fetch WakaTime API key from environment variables
 WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
@@ -19,33 +18,17 @@ def fetch_wakatime_data():
     response.raise_for_status()
     return response.json()
 
-# Construct HTML content with injected data
+# Construct simplified HTML content with injected data
 def construct_html_content(data):
     html_content = f"""
-
-      <div class="state-container">
-        <h2>State Reader</h2>
-        <div id="result">
-          <div class="daily-average">
-            {data['dailyAverage']}
-          </div>
-          <div class="digital">
-            {data['digital']}
-          </div>
-          <div class="dates-range">
-            <div class="start">
-              {data['startDate']}
-            </div>
-            <div class="end">
-              {data['endDate']}
-            </div>
-          </div>
-          <div class="text">
-            {data['text']}
-          </div>
-        </div>
+      <div>
+        <h2>WakaTime Stats</h2>
+        <p>Daily Average: {data.get('dailyAverage', 'N/A')}</p>
+        <p>Total Time: {data.get('digital', 'N/A')}</p>
+        <p>Start Date: {data.get('startDate', 'N/A')}</p>
+        <p>End Date: {data.get('endDate', 'N/A')}</p>
+        <p>Text: {data.get('text', 'N/A')}</p>
       </div>
-
     """
     return html_content
 
@@ -82,6 +65,7 @@ def main():
         print("Constructing HTML content...")
         html_content = construct_html_content(data)
         print("HTML content generated successfully")
+        print("Generated HTML content:", html_content)
 
         print("Updating README.md...")
         update_readme(html_content)
