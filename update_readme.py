@@ -51,7 +51,7 @@ def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
 def update_readme_with_svg():
     try:
         username = "devtz007"
-        svg_url = f"https://raw.githubusercontent.com/{username}/{username}/master/wakatime-stats.svg"
+        svg_url = f"./wakatime-stats.svg"
         html_img_tag = f'<div style="width: 100%;">\n  <img src="{svg_url}" style="width: 100%;" alt="WakaTime Stats">\n</div>\n'
         
         with open('README.md', 'r', encoding='utf-8') as file:
