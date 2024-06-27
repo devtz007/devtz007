@@ -18,8 +18,8 @@ def fetch_wakatime_data():
     response.raise_for_status()
     return response.json()
 
-# Construct HTML content with inline CSS
-def construct_html_content(data):
+# Construct Markdown content
+def construct_markdown_content(data):
     # Access nested data correctly
     data = data.get('data', {})
     daily_average = data.get('daily_average', 'N/A')
@@ -28,46 +28,39 @@ def construct_html_content(data):
     end_date = data.get('range', {}).get('end_date', 'N/A')
     text = data.get('text', 'N/A')
 
-    html_content = f"""
-    <div style="font-family: Arial, sans-serif;">
-        <h2 style="color: #2e6c80;">WakaTime Stats</h2>
-        <p><strong>Daily Average:</strong> {daily_average}</p>
-        <p><strong>Total Time:</strong> {digital}</p>
-        <p><strong>Start Date:</strong> {start_date}</p>
-        <p><strong>End Date:</strong> {end_date}</p>
-        <p><strong>Text:</strong> {text}</p>
-    </div>
-    """
-    return html_content
+    markdown_content = f"""
+### WakaTime Stats
 
-# Update the README.md with the new HTML content
-def update_readme(html_content):
+- **Daily Average:** {daily_average}
+- **Total Time:** {digital}
+- **Start Date:** {start_date}
+- **End Date:** {end_date}
+- **Text:** {text}
+"""
+    return markdown_content
+
+# Update the README.md with Markdown content
+def update_readme(markdown_content):
     try:
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
 
-        print("Current README.md content:")
-        print(''.join(readme))
-        
         start_marker = '<!--START_SECTION:wakatime-->\n'
         end_marker = '<!--END_SECTION:wakatime-->\n'
-        
+
         if start_marker not in readme or end_marker not in readme:
             raise ValueError("Markers for the section not found in README.md")
 
         start_index = readme.index(start_marker) + 1
         end_index = readme.index(end_marker)
-        
-        readme[start_index:end_index] = [html_content + '\n']
-        
-        print("Updated README.md content:")
-        print(''.join(readme))
-        
+
+        readme[start_index:end_index] = [markdown_content + '\n']
+
         with open('README.md', 'w', encoding='utf-8') as file:
             file.writelines(readme)
-        
+
         print("README.md updated successfully")
-        
+
     except ValueError as ve:
         print(f"ValueError: {ve}")
     except Exception as e:
@@ -75,20 +68,18 @@ def update_readme(html_content):
 
 def main():
     try:
-        print("Current working directory:", os.getcwd())
-        print("Environment variables:", os.environ)
-
         print("Fetching WakaTime data...")
         data = fetch_wakatime_data()
         print("Data fetched successfully:", data)
 
-        print("Constructing HTML content...")
-        html_content = construct_html_content(data)
-        print("HTML content generated successfully")
-        print("Generated HTML content:", html_content)
+        print("Constructing Markdown content...")
+        markdown_content = construct_markdown_content(data)
+        print("Markdown content generated successfully")
+        print("Generated Markdown content:")
+        print(markdown_content)
 
         print("Updating README.md...")
-        update_readme(html_content)
+        update_readme(markdown_content)
         print("README.md updated successfully")
 
     except Exception as e:
