@@ -1,12 +1,17 @@
-## About devtz007
+<h1 style="font-size: 14px; color: #2e6c80;">👋 Hello, I'm devtz007!</h1>
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/42093651?v=4" alt="Profile Picture" width="150" />
-  <h2>👋 Hello, I'm devtz007!</h2>
+  <h2 style="color: #2e6c80;">👋 Hello, I'm devtz007!</h2>
   <p>
-    <em>Full Stack Developer | Open Source Enthusiast | Lifelong Learner</em>
+    <em>
+      <span style="color: #ff6347;">Full Stack Developer</span> |
+      <span style="color: #1e90ff;">Open Source Enthusiast</span> |
+      <span style="color: #32cd32;">Lifelong Learner</span>
+    </em>
   </p>
 </div>
+
 
 
 ### 🌟 **A Little Bit About Me:**
@@ -25,7 +30,7 @@
 
 ### 🌐 **Connect with Me:**
 
-<div align="center">
+<div>
   <a href="https://twitter.com/devtz007" target="_blank">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
   </a>
