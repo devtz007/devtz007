@@ -1,4 +1,4 @@
-name: Update README
+name: github_profile
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
@@ -28,15 +28,14 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: python update_readme.py
 
-      - name: Check for changes in README.md
-        id: check_changes
-        run: |
-          git diff --quiet -- README.md || echo "Changes detected"
-
-      - name: Commit and push changes if there are any
-        if: steps.check_changes.outputs.changed == 'true'
+      - name: Commit changes
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git commit -am "Updated README.md"
-          git push
+          git add README.md
+          git commit -m "Updated README.md with latest WakaTime stats" || echo "No changes to commit"
+
+      - name: Push changes
+        run: git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
