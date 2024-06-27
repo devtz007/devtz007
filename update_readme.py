@@ -75,6 +75,9 @@ def update_readme(html_content):
 
 def main():
     try:
+        print("Current working directory:", os.getcwd())
+        print("Environment variables:", os.environ)
+
         print("Fetching WakaTime data...")
         data = fetch_wakatime_data()
         print("Data fetched successfully:", data)
