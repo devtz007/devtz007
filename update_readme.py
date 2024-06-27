@@ -55,8 +55,8 @@ def update_readme(html_content):
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
         
-        start_marker = '<!--START_SECTION:index.html-->\n'
-        end_marker = '<!--END_SECTION:index.html-->\n'
+        start_marker = '<!--START_SECTION:wakatime-->\n'
+        end_marker = '<!--END_SECTION:wakatime-->\n'
         
         start_index = readme.index(start_marker) + 1
         end_index = readme.index(end_marker)
@@ -65,6 +65,8 @@ def update_readme(html_content):
         
         with open('README.md', 'w', encoding='utf-8') as file:
             file.writelines(readme)
+        
+        print("README.md updated successfully")
         
     except ValueError:
         raise ValueError("Markers for the HTML section not found in README.md")

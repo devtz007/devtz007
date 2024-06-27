@@ -1,4 +1,4 @@
-name: github_profile
+name: Update README
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
@@ -30,7 +30,13 @@ jobs:
 
       - name: Check for changes in README.md
         id: check_changes
-        run: git diff --quiet -- README.md || (git config --global user.email "github-actions[bot]@users.noreply.github.com" && git config --global user.name "github-actions[bot]" && git commit -am 'Updated README.md' && git push)
+        run: |
+          git diff --quiet -- README.md || echo "Changes detected"
 
-      - name: Check if commit was pushed
-        run: echo "Changes were pushed to the repository"
+      - name: Commit and push changes if there are any
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git commit -am "Updated README.md"
+          git push

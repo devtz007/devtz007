@@ -1,4 +1,2 @@
-
-<!--START_SECTION:index.html-->
-<!--END_SECTION:index.html-->
-
+<!--START_SECTION:wakatime-->
+<!--END_SECTION:wakatime-->
