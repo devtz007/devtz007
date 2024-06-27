@@ -52,7 +52,7 @@ def update_readme_with_svg():
     try:
         username = "devtz007"
         svg_url = f"https://raw.githubusercontent.com/{username}/{username}/master/wakatime-stats.svg"
-        markdown_link = f"\n### WakaTime Stats 📊\n\n![WakaTime Stats]({svg_url})\n\n"
+        html_img_tag = f'<div style="width: 100%;">\n  <img src="{svg_url}" style="width: 100%;" alt="WakaTime Stats">\n</div>\n'
         
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
@@ -66,7 +66,7 @@ def update_readme_with_svg():
         start_index = readme.index(start_marker) + 1
         end_index = readme.index(end_marker)
 
-        readme[start_index:end_index] = [markdown_link]
+        readme[start_index:end_index] = [html_img_tag]
 
         with open('README.md', 'w', encoding='utf-8') as file:
             file.writelines(readme)
