@@ -54,8 +54,9 @@ def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
 def update_readme_with_svg():
     try:
         username = "devtz007"
-        svg_url = f"https://raw.githubusercontent.com/{username}/{username}/master/wakatime-stats.svg"
-        markdown_link = f"\n### WakaTime Stats 📊\n\n![Image alt text]({svg_url})\n\n"
+        repo_name = "devtz007"  # Adjust if your repository name is different
+        svg_url = f"https://{username}.github.io/{repo_name}/wakatime-stats.svg"
+        markdown_link = f"\n### WakaTime Stats 📊\n\n![WakaTime Stats]({svg_url})\n\n"
         
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
