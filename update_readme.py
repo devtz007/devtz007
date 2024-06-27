@@ -30,8 +30,9 @@ def construct_svg_content(data):
     svg_content = f"""
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
-            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <h2 style="color: #2e6c80;">WakaTime Stats</h2>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+
+                <h1 style="color: #2e6c80;">WakaTime Stats</h1>
                 <p style="font-weight: bold;">Daily Average: {daily_average}</p>
                 <p style="font-weight: bold;">Total Time: {digital}</p>
                 <p style="font-weight: bold;">Start Date: {start_date}</p>
@@ -54,7 +55,7 @@ def update_readme_with_svg():
     try:
         username = "devtz007"
         svg_url = f"https://raw.githubusercontent.com/{username}/{username}/master/wakatime-stats.svg"
-        markdown_link = f"\n### WakaTime Stats 📊\n\n![WakaTime Stats]({svg_url})\n\n"
+        markdown_link = f"\n### WakaTime Stats 📊\n\n![Image alt text]({svg_url})\n\n"
         
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
