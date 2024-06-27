@@ -22,11 +22,10 @@ jobs:
         run: |
           pip install requests
 
-      - name: Run update_readme.py and capture output
+      - name: Run update_readme.py
         env:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
-        run: |
-          python update_readme.py > output.log  # Redirect Python script output to a log file
+        run: python update_readme.py
 
       - name: Check for changes in README.md
         id: check_changes
@@ -49,4 +48,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: html-artifacts
-          path: README.md 
+          path: README.md
