@@ -21,11 +21,9 @@ def fetch_wakatime_data():
 # Construct SVG content
 def construct_svg_content(data):
     data = data.get('data', {})
-    daily_average = data.get('daily_average', 'N/A')
-    digital = data.get('digital', 'N/A')
+    text = data.get('text', 'N/A')
     start_date = data.get('range', {}).get('start_date', 'N/A')
     end_date = data.get('range', {}).get('end_date', 'N/A')
-    text = data.get('text', 'N/A')
 
     svg_content = f"""<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
@@ -79,7 +77,7 @@ def main():
         print("SVG content generated successfully")
 
         print("Updating README.md with SVG content...")
-        update_readme_with_svg()
+        update_readme_with_svg(svg_content)
 
         print("README.md updated successfully")
 
