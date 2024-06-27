@@ -1,5 +1,6 @@
 import os
 import base64
+import subprocess
 import requests
 
 # Fetch WakaTime API key from environment variables
@@ -7,6 +8,22 @@ WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
 
 if not WAKATIME_API_KEY:
     raise ValueError("WAKATIME_API_KEY environment variable is not set")
+
+# Function to get GitHub username
+def get_github_username():
+    try:
+        result = subprocess.run(['git', 'config', '--get', 'remote.origin.url'], capture_output=True, text=True)
+        remote_url = result.stdout.strip()
+        if remote_url.startswith('https://github.com/'):
+            parts = remote_url.split('/')
+            return parts[-2]
+        elif remote_url.startswith('git@github.com:'):
+            parts = remote_url.split(':')
+            return parts[-1].split('/')[0]
+        else:
+            raise ValueError("Remote URL is not from GitHub")
+    except Exception as e:
+        raise RuntimeError(f"Failed to get GitHub username: {e}")
 
 # Fetch data from WakaTime API
 def fetch_wakatime_data():
@@ -51,8 +68,8 @@ def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
     print(f"SVG saved to {filename}")
 
 # Update README.md with dynamic SVG link
-def update_readme_with_svg_link():
-    svg_link = "https://raw.githubusercontent.com/username/repository/main/wakatime-stats.svg"
+def update_readme_with_svg_link(username):
+    svg_link = f"https://raw.githubusercontent.com/{username}/master/wakatime-stats.svg"
     markdown_content = f"""
 ### WakaTime Stats 📊
 
@@ -85,6 +102,10 @@ def update_readme_with_svg_link():
 
 def main():
     try:
+        print("Fetching GitHub username...")
+        username = get_github_username()
+        print(f"GitHub username: {username}")
+
         print("Fetching WakaTime data...")
         data = fetch_wakatime_data()
         print("Data fetched successfully:", data)
@@ -99,7 +120,7 @@ def main():
         save_svg_to_file(svg_content)
 
         print("Updating README.md with SVG link...")
-        update_readme_with_svg_link()
+        update_readme_with_svg_link(username)
         print("README.md updated successfully with SVG link")
 
     except Exception as e:
