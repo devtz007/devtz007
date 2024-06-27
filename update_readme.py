@@ -27,11 +27,9 @@ def construct_svg_content(data):
     end_date = data.get('range', {}).get('end_date', 'N/A')
     text = data.get('text', 'N/A')
 
-    svg_content = f"""
-    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+    svg_content = f"""<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-
+            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
                 <h1 style="color: #2e6c80;">WakaTime Stats</h1>
                 <p style="font-weight: bold;">Daily Average: {daily_average}</p>
                 <p style="font-weight: bold;">Total Time: {digital}</p>
@@ -40,8 +38,7 @@ def construct_svg_content(data):
                 <p style="font-weight: bold;">Text: {text}</p>
             </div>
         </foreignObject>
-    </svg>
-    """
+    </svg>"""
     return svg_content
 
 # Save SVG content to file
@@ -54,8 +51,7 @@ def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
 def update_readme_with_svg():
     try:
         username = "devtz007"
-        repo_name = "devtz007"  # Adjust if your repository name is different
-        svg_url = f"https://{username}.github.io/{repo_name}/wakatime-stats.svg"
+        svg_url = f"https://raw.githubusercontent.com/{username}/{username}/master/wakatime-stats.svg"
         markdown_link = f"\n### WakaTime Stats 📊\n\n![WakaTime Stats]({svg_url})\n\n"
         
         with open('README.md', 'r', encoding='utf-8') as file:
