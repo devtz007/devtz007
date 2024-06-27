@@ -28,10 +28,6 @@ jobs:
         run: |
           python update_readme.py > output.log  # Redirect Python script output to a log file
 
-      - name: View generated README content
-        run: |
-          cat README.md
-
       - name: Check for changes in README.md
         id: check_changes
         run: |
