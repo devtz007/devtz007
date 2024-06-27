@@ -25,9 +25,7 @@ def construct_svg_content(data):
     <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100" height="100">
             <div xmlns="http://www.w3.org/1999/xhtml">
-                <!-- Replace with your SVG content based on WakaTime data -->
                 <h2>WakaTime Stats</h2>
-                <p>Daily Average: {data['daily_average']}</p>
                 <p>Total Time: {data['digital']}</p>
                 <p>Start Date: {data['range']['start_date']}</p>
                 <p>End Date: {data['range']['end_date']}</p>
