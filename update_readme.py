@@ -46,9 +46,12 @@ def construct_svg_content(data):
 
 # Save SVG content to file
 def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
-    with open(filename, 'w', encoding='utf-8') as file:
-        file.write(svg_content)
-    print(f"SVG saved to {filename}")
+    try:
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write(svg_content)
+        print(f"SVG saved to {filename}")
+    except Exception as e:
+        print(f"Failed to save SVG to {filename}: {e}")
 
 # Function to verify if SVG file exists and contains content
 def verify_svg_file():
