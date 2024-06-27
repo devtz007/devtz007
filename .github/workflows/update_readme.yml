@@ -3,7 +3,7 @@ name: Update README with custom HTML
 on:
   push:
     branches:
-      - master  # Change 'main' to 'master' if your branch is named 'master'
+      - master
 
 jobs:
   update-readme:
@@ -17,7 +17,13 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: Install dependencies
+        run: |
+          pip install requests
+
       - name: Run update_readme.py
+        env:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: |
           python update_readme.py
 
@@ -33,4 +39,4 @@ jobs:
           git config --global user.email 'github-actions@github.com'
           git add README.md
           git commit -m 'Update README with custom HTML'
-          git push origin master  # Push changes to the 'master' branch
+          git push origin master
