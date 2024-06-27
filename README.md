@@ -1,24 +1,23 @@
 ## About devtz007
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/your-image-link" alt="Profile Picture" width="150" />
+  <img src="https://avatars.githubusercontent.com/u/42093651?v=4" alt="Profile Picture" width="150" />
   <h2>👋 Hello, I'm devtz007!</h2>
   <p>
     <em>Full Stack Developer | Open Source Enthusiast | Lifelong Learner</em>
   </p>
 </div>
 
+
 ### 🌟 **A Little Bit About Me:**
 
-- 🔭 I’m currently working on: `Your Project Name`
-- 🌱 I’m currently learning: `Your Learning Focus`
-- 👯 I’m looking to collaborate on: `Open Source Projects`
-- 💬 Ask me about: `Your Expertise Areas`
-- 📫 How to reach me: `Your Email Address`
-- ⚡ Fun fact: `Your Fun Fact`
+- 🌱 I’m currently learning: `Cyber Security`
+- 📫 How to reach me: `devtz007@proton.me`
+- 💼 My Company: [TechJork IT Solution Limited](https://www.techjork.com)
+- 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
+
 
 ### 📈 **Coding Statistics Tracked by WakaTime:**
-
 
 <!--START_SECTION:wakatime_all_time_since_today-->
 <!--END_SECTION:wakatime_all_time_since_today-->
@@ -27,22 +26,17 @@
 ### 🌐 **Connect with Me:**
 
 <div align="center">
-  <a href="https://twitter.com/your-twitter-handle" target="_blank">
+  <a href="https://twitter.com/devtz007" target="_blank">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
   </a>
-  <a href="https://linkedin.com/in/your-linkedin-handle" target="_blank">
+  <a href="https://linkedin.com/in/devtz007" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
   </a>
-  <a href="https://dev.to/your-devto-handle" target="_blank">
-    <img src="https://img.shields.io/badge/Dev.to-0A0A0A?style=for-the-badge&logo=dev-dot-to&logoColor=white" alt="Dev.to Badge"/>
-  </a>
-  <a href="https://your-blog-link" target="_blank">
-    <img src="https://img.shields.io/badge/Blog-FF4088?style=for-the-badge&logo=ghost&logoColor=white" alt="Blog Badge"/>
-  </a>
-  <a href="mailto:your-email-address" target="_blank">
+  <a href="mailto:devtz007@proton.me" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
 </div>
+
 
 ### 🛠 **Tech Stack:**
 
@@ -60,6 +54,7 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
+
 
 ### 📊 **GitHub Stats:**
 
