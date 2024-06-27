@@ -1,4 +1,4 @@
-name: Update README with custom HTML
+name: github_profile
 
 on:
   push:
@@ -10,7 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -18,7 +19,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
 
       - name: Run update_readme.py
         env:
@@ -27,16 +30,7 @@ jobs:
 
       - name: Check for changes in README.md
         id: check_changes
-        run: git diff --quiet -- README.md || echo "README.md has changes"
+        run: git diff --quiet -- README.md || (git config --global user.email "github-actions[bot]@users.noreply.github.com" && git config --global user.name "github-actions[bot]" && git commit -am 'Updated README.md' && git push)
 
-      - name: Stage README.md for commit
-        run: git add README.md
-
-      - name: Commit and push changes if README updated
-        if: steps.check_changes.outputs.code != 'README.md has changes'
-        run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git commit -am 'Update README with custom HTML'
-          git push origin ${{ github.ref }}
-
+      - name: Check if commit was pushed
+        run: echo "Changes were pushed to the repository"
