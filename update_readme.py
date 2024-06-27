@@ -18,9 +18,8 @@ def fetch_wakatime_data():
     response.raise_for_status()
     return response.json()
 
-# Construct SVG content with inline styles
+# Construct SVG content
 def construct_svg_content(data):
-    # Access nested data correctly
     data = data.get('data', {})
     daily_average = data.get('daily_average', 'N/A')
     digital = data.get('digital', 'N/A')
@@ -46,23 +45,40 @@ def construct_svg_content(data):
 
 # Save SVG content to file
 def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
-    try:
-        with open(filename, 'w', encoding='utf-8') as file:
-            file.write(svg_content)
-        print(f"SVG saved to {filename}")
-    except Exception as e:
-        print(f"Failed to save SVG to {filename}: {e}")
+    with open(filename, 'w', encoding='utf-8') as file:
+        file.write(svg_content)
+    print(f"SVG saved to {filename}")
 
-# Function to verify if SVG file exists and contains content
-def verify_svg_file():
-    filename = 'wakatime-stats.svg'
-    if os.path.exists(filename):
-        with open(filename, 'r', encoding='utf-8') as file:
-            svg_content = file.read()
-        print(f"SVG file '{filename}' exists and contains:\n")
-        print(svg_content)
-    else:
-        print(f"SVG file '{filename}' not found.")
+# Update the README.md with SVG URL
+def update_readme_with_svg():
+    try:
+        username = "devtz007"
+        svg_url = f"https://raw.githubusercontent.com/{username}/master/wakatime-stats.svg"
+        markdown_link = f"\n### WakaTime Stats 📊\n\n![WakaTime Stats]({svg_url})\n\n"
+        
+        with open('README.md', 'r', encoding='utf-8') as file:
+            readme = file.readlines()
+
+        start_marker = '<!--START_SECTION:wakatime-->\n'
+        end_marker = '<!--END_SECTION:wakatime-->\n'
+
+        if start_marker not in readme or end_marker not in readme:
+            raise ValueError("Markers for the section not found in README.md")
+
+        start_index = readme.index(start_marker) + 1
+        end_index = readme.index(end_marker)
+
+        readme[start_index:end_index] = [markdown_link]
+
+        with open('README.md', 'w', encoding='utf-8') as file:
+            file.writelines(readme)
+
+        print("README.md updated successfully")
+
+    except ValueError as ve:
+        print(f"ValueError: {ve}")
+    except Exception as e:
+        print(f"Failed to update README.md: {e}")
 
 def main():
     try:
@@ -76,9 +92,11 @@ def main():
 
         print("Saving SVG to file...")
         save_svg_to_file(svg_content)
-        
-        # Verify SVG file after saving
-        verify_svg_file()
+
+        print("Updating README.md with SVG URL...")
+        update_readme_with_svg()
+
+        print("README.md updated successfully")
 
     except Exception as e:
         print(f"An error occurred: {e}")
