@@ -29,20 +29,21 @@ def construct_svg_content(data):
     text = data.get('text', 'N/A')
 
     svg_content = f"""
-    <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
-        <foreignObject width="100" height="100">
-            <div xmlns="http://www.w3.org/1999/xhtml">
-                <h2>WakaTime Stats</h2>
-                <p>Daily Average: {daily_average}</p>
-                <p>Total Time: {digital}</p>
-                <p>Start Date: {start_date}</p>
-                <p>End Date: {end_date}</p>
-                <p>Text: {text}</p>
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        <foreignObject width="100%" height="100%">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
+                <h2 style="color: #2e6c80;">WakaTime Stats</h2>
+                <p style="font-weight: bold;">Daily Average: {daily_average}</p>
+                <p style="font-weight: bold;">Total Time: {digital}</p>
+                <p style="font-weight: bold;">Start Date: {start_date}</p>
+                <p style="font-weight: bold;">End Date: {end_date}</p>
+                <p style="font-weight: bold;">Text: {text}</p>
             </div>
         </foreignObject>
     </svg>
     """
     return svg_content
+
 
 # Save SVG content to file
 def save_svg_to_file(svg_content, filename='wakatime-stats.svg'):
