@@ -1,6 +1,7 @@
 import os
 import base64
 import requests
+import json
 
 # Fetch WakaTime API key from environment variables
 WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
@@ -23,23 +24,12 @@ def read_html_template():
     with open('templates/index.html', 'r') as file:
         return file.read()
 
-# Inject the fetched data into the HTML template
+# Inject the JSON data into the HTML template
 def inject_data_into_html(template, data):
-    html_content = template
-    html_content = html_content.replace('{{totalCodingTime}}', data['data']['grand_total']['text'])
-    html_content = html_content.replace('{{codingHours}}', f"{data['data']['categories'][0]['hours']} hrs")
-    html_content = html_content.replace('{{codingMinutes}}', f"{data['data']['categories'][0]['minutes']} mins")
-
-    languages_html = ""
-    for lang in data['data']['languages']:
-        languages_html += f"<li>{lang['name']}: {lang['text']}</li>"
-    html_content = html_content.replace('{{languagesList}}', languages_html)
-
-    projects_html = ""
-    for proj in data['data']['projects']:
-        projects_html += f"<li>{proj['name']}: {proj['text']}</li>"
-    html_content = html_content.replace('{{projectsList}}', projects_html)
-
+    # Convert data to JSON string and escape double quotes
+    json_data = json.dumps(data).replace('"', '\\"')
+    # Inject the JSON data into a script tag
+    html_content = template.replace('{{jsonData}}', json_data)
     return html_content
 
 # Update the README.md with the new HTML content
@@ -63,20 +53,24 @@ def update_readme(html_content):
 
 def main():
     print("Fetching WakaTime data...")
-    data = fetch_wakatime_data()
-    print("Data fetched:", data)
+    try:
+        data = fetch_wakatime_data()
+        print("Data fetched successfully:", data)
 
-    print("Reading HTML template...")
-    template = read_html_template()
-    print("Template read")
+        print("Reading HTML template...")
+        template = read_html_template()
+        print("Template read successfully")
 
-    print("Injecting data into HTML template...")
-    html_content = inject_data_into_html(template, data)
-    print("HTML content generated:", html_content)
+        print("Injecting data into HTML template...")
+        html_content = inject_data_into_html(template, data)
+        print("HTML content generated successfully")
 
-    print("Updating README.md...")
-    update_readme(html_content)
-    print("README.md updated")
+        print("Updating README.md...")
+        update_readme(html_content)
+        print("README.md updated successfully")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>State Reader</title>
   <style>
-    /* Add your CSS styles here */
   </style>
 </head>
 <body>
   <div class="state-container">
     <h2>State Reader</h2>
     <div id="result">
-      <div id="totalCodingTime">{{totalCodingTime}}</div>
-      <div id="codingHours">{{codingHours}}</div>
-      <div id="codingMinutes">{{codingMinutes}}</div>
-      <ul id="languagesList">{{languagesList}}</ul>
-      <ul id="projectsList">{{projectsList}}</ul>
+      <div id="totalCodingTime"></div>
+      <div id="codingHours"></div>
+      <div id="codingMinutes"></div>
+      <ul id="languagesList"></ul>
+      <ul id="projectsList"></ul>
     </div>
   </div>
+
+  <script>
+    // Injected JSON data
+    const jsonData = "{{jsonData}}";
+
+    // Parse JSON data
+    const data = JSON.parse(jsonData.replace(/\\"/g, '"'));
+
+    // Function to dynamically generate content
+    function generateContent(data) {
+      document.getElementById("totalCodingTime").textContent = data.data.grand_total.text;
+      document.getElementById("codingHours").textContent = `${data.data.categories[0].hours} hrs`;
+      document.getElementById("codingMinutes").textContent = `${data.data.categories[0].minutes} mins`;
+
+      // Update languages list
+      const languagesList = document.getElementById("languagesList");
+      languagesList.innerHTML = "";
+      data.data.languages.forEach((lang) => {
+        const li = document.createElement("li");
+        li.textContent = `${lang.name}: ${lang.text}`;
+        languagesList.appendChild(li);
+      });
+
+      // Update projects list
+      const projectsList = document.getElementById("projectsList");
+      projectsList.innerHTML = "";
+      data.data.projects.forEach((proj) => {
+        const li = document.createElement("li");
+        li.textContent = `${proj.name}: ${proj.text}`;
+        projectsList.appendChild(li);
+      });
+    }
+
+    // Call generateContent function to populate the HTML
+    generateContent(data);
+  </script>
 </body>
 </html>
