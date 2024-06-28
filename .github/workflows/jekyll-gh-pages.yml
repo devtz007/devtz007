@@ -21,14 +21,20 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job
-  build:
+  # Initialization job
+  initialize:
     runs-on: ubuntu-latest
-    needs: update_readme  # Ensure this matches the job name in update_readme.yml
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Add any necessary initialization steps here
+
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    needs: initialize  # Ensure this matches the job name in the 'needs' field
+    steps:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
