@@ -1,4 +1,4 @@
-name: update_readme
+name: Update and Deploy
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
         run: python update_readme.py
 
-      - name: Commit changes
+      - name: Commit changes to README.md
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
@@ -40,11 +40,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
+    needs: update-readme  # Ensure update-readme job completes before starting deploy job
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -54,14 +53,14 @@ jobs:
           mkdir -p docs
           cp README.md docs/index.md
 
-      - name: Commit changes
+      - name: Commit changes to docs/index.md
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add docs/index.md
           git commit -m 'Deploy README.md to GitHub Pages' || echo "No changes to commit"
 
-      - name: Push changes
+      - name: Push changes to master branch
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
