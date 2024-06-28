@@ -34,7 +34,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ./docs
+          destination: ./docs  # Ensure destination is 'docs', not 'root'
 
   # Deployment job
   deploy:
@@ -49,4 +49,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GH_IO_PROFILE }}
-          publish_dir: ./docs
+          publish_dir: ./docs  # Ensure publish_dir matches the destination in build step
