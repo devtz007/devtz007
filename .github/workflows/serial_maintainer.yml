@@ -11,8 +11,8 @@ jobs:
 
     steps:
       - name: Run Update README
-        uses: ./.github/workflows/update_readme.yml
+        uses: ./gh_workflows/update_readme.yml
 
       - name: Run Deploy Static Site
         if: success()  # Only run if Update README succeeds
-        uses: ./.github/workflows/deploy_static_site.yml
+        uses: ./gh_workflows/deploy_static_site.yml
