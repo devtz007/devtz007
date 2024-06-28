@@ -40,13 +40,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  deploy:
+  deploy_static_page:
     runs-on: ubuntu-latest
     needs: update-readme  # Ensure update-readme job completes before starting deploy job
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Pull changes from remote
+        run: git pull origin master
 
       - name: Copy README.md to docs
         run: |
