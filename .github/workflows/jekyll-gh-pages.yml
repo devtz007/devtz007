@@ -29,21 +29,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Setup Ruby and Bundler
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0
+
+      - name: Install Jekyll and Dependencies
+        run: |
+          gem install bundler
+          bundle install --path vendor/bundle
 
       - name: Build with Jekyll
         run: |
-          bundle install --path vendor/bundle
           bundle exec jekyll build -d _site
           mkdir -p _site/profile
           mv _site/* _site/profile/
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Jekyll site
-          path: _site
 
   # Deployment job
   deploy:
