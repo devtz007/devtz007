@@ -34,14 +34,21 @@ jobs:
         with:
           ruby-version: 3.0
 
-      - name: Install Jekyll and Dependencies
+      - name: Install Bundler
+        run: gem install bundler
+
+      - name: Install dependencies
         run: |
-          gem install bundler
-          bundle install --path vendor/bundle
+          bundle config set path 'vendor/bundle'
+          bundle install
 
       - name: Build with Jekyll
+        run: bundle exec jekyll build -d _site
+        env:
+          GITHUB_PAGES: true
+
+      - name: Prepare deployment directory
         run: |
-          bundle exec jekyll build -d _site
           mkdir -p _site/profile
           mv _site/* _site/profile/
 
