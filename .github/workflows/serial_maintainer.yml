@@ -1,0 +1,18 @@
+name: serial_maintainer
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  run_update_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Update README
+        uses: ./.github/workflows/update_readme.yml
+
+      - name: Run Deploy Static Site
+        if: success()  # Only run if Update README succeeds
+        uses: ./.github/workflows/deploy_static_site.yml
