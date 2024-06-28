@@ -1,4 +1,4 @@
-name: github_profile
+name: update_readme
 
 on:
   push:
