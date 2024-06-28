@@ -51,3 +51,5 @@ jobs:
           github_token: ${{ secrets.GH_IO_PROFILE }}
           publish_dir: ./_site/profile
           cname: devtz007.github.io
+          publish_branch: master  # Specify the branch to deploy to
+
