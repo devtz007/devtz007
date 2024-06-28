@@ -77,8 +77,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          folder: docs  # Adjust if your static content is in a different folder
+
