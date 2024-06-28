@@ -25,8 +25,8 @@ def construct_svg_content(data):
     start_date = data.get('range', {}).get('start_date', 'N/A')
     end_date = data.get('range', {}).get('end_date', 'N/A')
 
-    svg_content = f"""<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        <foreignObject width="100%" height="auto">
+    svg_content = f"""<svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
                 <p style="font-weight: bold;">Code times: {text}</p>
                 <p style="font-weight: bold;">Start Date: {start_date}</p>
