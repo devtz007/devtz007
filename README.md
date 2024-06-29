@@ -31,7 +31,7 @@
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
                 <p style="font-weight: bold;">Code times: 1,980 hrs 27 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-                <p style="font-weight: bold;">End Date: 2024-06-29</p>
+                <p style="font-weight: bold;">End Date: 2024-06-30</p>
             </div>
         </foreignObject>
     </svg>
