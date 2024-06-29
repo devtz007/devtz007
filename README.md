@@ -18,7 +18,7 @@
 
 - 🌱 I’m currently learning: `Cyber Security`
 - 📫 How to reach me: `devtz007@proton.me`
-- 💼 My Company: [TechJork IT Solution Limited](https://www.techjork.com)
+- 💼 My Company: [TechJork IT Solutions Limited](https://www.techjork.com)
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
 
 
