@@ -16,7 +16,6 @@
 
 ### 🌟 **A Little Bit About Me:**
 
-- 🌱 I’m currently learning: `Cyber Security`
 - 📫 How to reach me: `devtz007@proton.me`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
