@@ -27,9 +27,9 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 1,980 hrs 48 mins</p>
+                <p style="font-weight: bold;">Code times: 1,982 hrs 33 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-                <p style="font-weight: bold;">End Date: 2024-07-02</p>
+                <p style="font-weight: bold;">End Date: 2024-07-06</p>
             </div>
         </foreignObject>
     </svg>
@@ -50,6 +50,25 @@
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
 </div>
+
+<!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
+
+<div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
+     <a itemprop='url' href=https://www.fiverr.com/addison007 rel="nofollow" target="_blank" style='display: inline-block;'>
+        <div class='fiverr-seller-content' id='fiverr-seller-widget-content-3f079bd9-32a2-4d15-aadc-3050f70aea8f' itemprop='contentURL' style='display: none;'></div>
+        <div id='fiverr-widget-seller-data' style='display: none;'>
+            <div itemprop='name' >addison007</div>
+            <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
+            <div itemprop='jobtitle'>Seller</div>
+            <div itemprop='description'>Hello,
+I'm a full stack website developer. I am in this field for long time. I have done many projects. I can make any kinds of website using latest technology. Please feel free to contact with me and dont hesitate to hire me.
+Thank you-</div>
+        </div>
+    </a>
+</div>
+
+<script id='fiverr-seller-widget-script-3f079bd9-32a2-4d15-aadc-3050f70aea8f' src='https://widgets.fiverr.com/api/v1/seller/addison007?widget_id=3f079bd9-32a2-4d15-aadc-3050f70aea8f' data-config='{"category_name":"\n                                    Programming \u0026 Tech\n\n                            "}' async='true' defer='true'></script>
+
 
 
 ### 🛠 **Tech Stack:**
@@ -76,3 +95,5 @@
   <img src="https://github-readme-stats.vercel.app/api?username=devtz007&show_icons=true&theme=radical" alt="GitHub Stats"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
+
+
