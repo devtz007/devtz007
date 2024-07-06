@@ -51,23 +51,8 @@
   </a>
 </div>
 
-<!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
-
-<div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
-     <a itemprop='url' href=https://www.fiverr.com/addison007 rel="nofollow" target="_blank" style='display: inline-block;'>
-        <div class='fiverr-seller-content' id='fiverr-seller-widget-content-3f079bd9-32a2-4d15-aadc-3050f70aea8f' itemprop='contentURL' style='display: none;'></div>
-        <div id='fiverr-widget-seller-data' style='display: none;'>
-            <div itemprop='name' >addison007</div>
-            <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
-            <div itemprop='jobtitle'>Seller</div>
-            <div itemprop='description'>Hello,
-I'm a full stack website developer. I am in this field for long time. I have done many projects. I can make any kinds of website using latest technology. Please feel free to contact with me and dont hesitate to hire me.
-Thank you-</div>
-        </div>
-    </a>
-</div>
-
-<script id='fiverr-seller-widget-script-3f079bd9-32a2-4d15-aadc-3050f70aea8f' src='https://widgets.fiverr.com/api/v1/seller/addison007?widget_id=3f079bd9-32a2-4d15-aadc-3050f70aea8f' data-config='{"category_name":"\n                                    Programming \u0026 Tech\n\n                            "}' async='true' defer='true'></script>
+<!-- Fiverr Widget placeholder as GitHub does not support script tags in README.md -->
+[![Fiverr Badge](https://www.fiverr.com/assets/img/seo/fiverr-site-icon.svg)](https://www.fiverr.com/addison007)
 
 
 
