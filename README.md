@@ -15,7 +15,7 @@
 <br/>
 <br/>
 
-### 🌟 **A Little Bit About Me:**
+## 🌟 **A Little Bit About Me:**
 
 - 📫 How to reach me: `devtz007@proton.me`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
@@ -23,7 +23,7 @@
 
 <br/>
 
-### 📈 **Coding Statistics Tracked by WakaTime:**
+## 📈 **Coding Statistics Tracked by WakaTime:**
 
 <!--START_SECTION:wakatime_all_time_since_today-->
 <div style="width: 100%;">
@@ -41,7 +41,7 @@
 
 <br/>
 
-### 🌐 **Connect with Me:**
+## 🌐 **Connect with Me:**
 
 <div>
   <a href="https://twitter.com/devtz007" target="_blank">
@@ -57,12 +57,12 @@
 
 <br/>
 
-**I am also available at**
+**I am also available at**  
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
 <br/>
 
-### 🛠 **Tech Stack:**
+## 🛠 **Tech Stack:**
 
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge"/>
@@ -81,7 +81,7 @@
 
 <br/>
 
-### 📊 **GitHub Stats:**
+## 📊 **GitHub Stats:**
 
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=devtz007&show_icons=true&theme=radical" alt="GitHub Stats"/>
