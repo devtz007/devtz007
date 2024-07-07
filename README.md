@@ -14,7 +14,6 @@
 
 <br/>
 <br/>
-<br/>
 
 ### 🌟 **A Little Bit About Me:**
 
@@ -59,12 +58,10 @@
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
 </div>
-
-
-## I am also available at 
+<br/>
+**I am also available at**
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
-<br/>
 <br/>
 <br/>
 
@@ -85,7 +82,6 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
 
-<br/>
 <br/>
 <br/>
 
