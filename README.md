@@ -12,6 +12,9 @@
   </p>
 </div>
 
+<br/>
+<br/>
+<br/>
 
 ### 🌟 **A Little Bit About Me:**
 
@@ -19,6 +22,9 @@
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
 
+<br/>
+<br/>
+<br/>
 
 ### 📈 **Coding Statistics Tracked by WakaTime:**
 
@@ -36,6 +42,9 @@
 </div>
 <!--END_SECTION:wakatime_all_time_since_today-->
 
+<br/>
+<br/>
+<br/>
 
 ### 🌐 **Connect with Me:**
 
@@ -55,7 +64,9 @@
 ## I am also available at 
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
-
+<br/>
+<br/>
+<br/>
 
 ### 🛠 **Tech Stack:**
 
@@ -74,6 +85,9 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
 
+<br/>
+<br/>
+<br/>
 
 ### 📊 **GitHub Stats:**
 
