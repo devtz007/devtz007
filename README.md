@@ -55,9 +55,7 @@
   </a>
 </div>
 
-<br/>
-
-**I am also available at**  
+### **I am also available at**  
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
 <br/>
