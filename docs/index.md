@@ -22,8 +22,6 @@
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
 
 <br/>
-<br/>
-<br/>
 
 ### 📈 **Coding Statistics Tracked by WakaTime:**
 
@@ -42,8 +40,6 @@
 <!--END_SECTION:wakatime_all_time_since_today-->
 
 <br/>
-<br/>
-<br/>
 
 ### 🌐 **Connect with Me:**
 
@@ -58,11 +54,12 @@
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge"/>
   </a>
 </div>
+
 <br/>
+
 **I am also available at**
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
-<br/>
 <br/>
 
 ### 🛠 **Tech Stack:**
@@ -82,7 +79,6 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
 
-<br/>
 <br/>
 
 ### 📊 **GitHub Stats:**
