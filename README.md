@@ -51,8 +51,9 @@
   </a>
 </div>
 
-<!-- Fiverr Widget placeholder as GitHub does not support script tags in README.md -->
-[![Fiverr Badge](https://www.fiverr.com/assets/img/seo/fiverr-site-icon.svg)](https://www.fiverr.com/addison007)
+
+## I am also available at 
+[![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
 
 
