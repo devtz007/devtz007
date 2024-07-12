@@ -1,4 +1,4 @@
-<h1 style="font-size: 14px; color: #2e6c80;">About devtz007.</h1>
+<h1 style="font-size: 14px; color: #2e6c80;">About devtz007</h1>
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/42093651?v=4" alt="Profile Picture" width="150" />
