@@ -1,4 +1,4 @@
-<h1 style="font-size: 14px; color: #2e6c80;">About devtz007</h1>
+<h1 style="font-size: 14px; color: #2e6c80;">About devtz007.</h1>
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/42093651?v=4" alt="Profile Picture" width="150" />
@@ -30,9 +30,9 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 1,983 hrs 3 mins</p>
+                <p style="font-weight: bold;">Code times: 1,983 hrs 58 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-                <p style="font-weight: bold;">End Date: 2024-07-07</p>
+                <p style="font-weight: bold;">End Date: 2024-07-12</p>
             </div>
         </foreignObject>
     </svg>
