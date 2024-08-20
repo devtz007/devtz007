@@ -17,7 +17,7 @@
 
 ## 🌟 **A Little Bit About Me:**
 
-- 📫 How to reach me: `devtz007@proton.me`
+- 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
 
