@@ -16,6 +16,7 @@
 <br/>
 
 ## 🌟 **A Little Bit About Me:**
+<p>Front-End Developer with 3+ years of experience at Wolast Technologies, proficient in HTML, CSS, SASS, Vanilla JavaScript, React, Angular and Tailwind. Successfully served as technical lead, developed responsive user interfaces with React.js, and significantly increased customer engagement by 25%. Expert in agile software development, rapid prototyping, and collaborating with government entities to develop and document software solutions.<p/>
 
 - 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
@@ -30,9 +31,9 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 2,090 hrs 9 mins</p>
+                <p style="font-weight: bold;">Code times: 2,142 hrs 58 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-                <p style="font-weight: bold;">End Date: 2024-08-25</p>
+                <p style="font-weight: bold;">End Date: 2024-09-09</p>
             </div>
         </foreignObject>
     </svg>
