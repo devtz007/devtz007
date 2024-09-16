@@ -15,7 +15,7 @@
 <br/>
 <br/>
 
-## 🌟 **A Little Bit About Me:**
+## 🌟 **A little bit about me:**
 <p>Front-End Developer with 3+ years of experience at Wolast Technologies, proficient in HTML, CSS, SASS, Vanilla JavaScript, React, Angular and Tailwind. Successfully served as technical lead, developed responsive user interfaces with React.js, and significantly increased customer engagement by 25%. Expert in agile software development, rapid prototyping, and collaborating with government entities to develop and document software solutions.<p/>
 
 - 📫 How to reach me: `devtz007@hotmail.com`
