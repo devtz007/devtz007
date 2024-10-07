@@ -21,6 +21,8 @@
 - 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
+
+<br/>
 <br/>
 
 ## 📈 **Statistics**
@@ -43,6 +45,7 @@
 <!--END_SECTION:wakatime_all_time_since_today-->
 
 <br/>
+<br/>
 
 ## 🌐 **Connect with Me:**
 
@@ -58,10 +61,14 @@
   </a>
 </div>
 
+<br/>
+<br/>
+
 ### **I am also available at**  
 
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
+<br/>
 <br/>
 
 ## 🛠 **Tech Stack:**
@@ -82,7 +89,7 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
 
-
+<br/>
 <br/>
 
 ## 📊 **GitHub Stats:**
@@ -92,4 +99,5 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
 
-
+<br/>
+<br/>
