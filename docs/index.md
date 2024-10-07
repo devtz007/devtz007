@@ -16,18 +16,13 @@
 <br/>
 
 ## 🌟 **A little bit about me:**
-<p>Front-End Developer with 3+ years of experience at Wolast Technologies, proficient in HTML, CSS, SASS, Vanilla JavaScript, React, Angular and Tailwind. Successfully served as technical lead, developed responsive user interfaces with React.js, and significantly increased customer engagement by 25%. Expert in agile software development, rapid prototyping, and collaborating with government entities to develop and document software solutions.<p/>
-
-<br />
+<p>Full Stack Developer with over 3 years of experience at Wolast Technologies, proficient in front-end technologies such as HTML, CSS, SASS, Vanilla JavaScript, React, Angular, and Tailwind. Additionally skilled in back-end development with PHP, Node.js, and database management using MySQL and SQL. Served as a technical lead, developing responsive user interfaces with React.js and boosting customer engagement by 25%. Expert in agile software development, rapid prototyping, and cyber security, with a proven track record of collaborating with government entities to develop and document secure software solutions.<p/>
 
 [![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
-
 <br />
-
 - 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
 - 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
-
 <br/>
 
 ## 📈 **Coding Statistics Tracked by WakaTime:**
