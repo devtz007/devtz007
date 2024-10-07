@@ -6,8 +6,8 @@
   <p>
     <em>
       <span style="color: #ff6347;">Full Stack Developer</span> |
-      <span style="color: #1e90ff;">Open Source Enthusiast</span> |
-      <span style="color: #32cd32;">Lifelong Learner</span>
+      <span style="color: #1e90ff;">Cyber security expert</span> |
+      <span style="color: #32cd32;">Open Source Enthusiast</span>
     </em>
   </p>
 </div>
