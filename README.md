@@ -20,7 +20,9 @@
 
 <br />
 
-[![TryHackMe Profile](https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999)]
+[![TryHackMe Profile](https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999)](https://tryhackme.com/r/p/devtz007)
+
+<br />
 <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style='border:none;'></iframe>
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
@@ -63,6 +65,7 @@
 </div>
 
 ### **I am also available at**  
+
 [![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
 <br/>
