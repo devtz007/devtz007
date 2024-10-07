@@ -20,9 +20,9 @@
 
 <br />
 
-[![TryHackMe Profile]([https://tryhackme-badges.s3.amazonaws.com/227999.png](https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999)]
+[![TryHackMe Profile](https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999)]
 <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style='border:none;'></iframe>
-
+[![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
 
 - 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
