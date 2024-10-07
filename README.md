@@ -21,7 +21,6 @@
 <br />
 
 [![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
-<img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="Your Image Badge" />
 
 <br />
 
