@@ -25,8 +25,8 @@
 
 ## 📈 **Statistics**
 
-<!--START_SECTION:thm_badge-->
-<!--END_SECTION:thm_badge-->
+### TryHackMe
+[Check out my profile on TryHackMe](https://tryhackme.com/r/p/devtz007)
 
 <br />
 

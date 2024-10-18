@@ -3,7 +3,6 @@ import base64
 import requests
 import time
 import logging
-import random
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -44,9 +43,6 @@ def construct_svg_content(data):
     start_date = data.get('range', {}).get('start_date', 'N/A')
     end_date = data.get('range', {}).get('end_date', 'N/A')
 
-    # Generate a cache-busting URL for the THM badge
-    thm_badge_url = f"https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999&ts={int(time.time())}&rand={random.randint(1, 10000)}"
-
     svg_content = f"""<svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
@@ -57,16 +53,13 @@ def construct_svg_content(data):
         </foreignObject>
     </svg>"""
 
-    return svg_content, thm_badge_url
+    return svg_content
 
-# Update the README.md with SVG content and THM badge
-def update_readme_with_svg(svg_content, thm_badge_url):
+# Update the README.md with SVG content
+def update_readme_with_svg(svg_content):
     try:
         html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
         
-        # HTML for the TryHackMe badge with the cache-busting URL
-        thm_badge = f'<img src="{thm_badge_url}" style="border:none;" />'
-
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
 
@@ -82,19 +75,6 @@ def update_readme_with_svg(svg_content, thm_badge_url):
 
         # Update the section with SVG content
         readme[start_index_wakatime:end_index_wakatime] = [html_img_tag]
-
-        # Update THM badge section
-        start_marker_thm = '<!--START_SECTION:thm_badge-->\n'
-        end_marker_thm = '<!--END_SECTION:thm_badge-->\n'
-
-        if start_marker_thm not in readme or end_marker_thm not in readme:
-            raise ValueError("Markers for the THM badge section not found in README.md")
-
-        start_index_thm = readme.index(start_marker_thm) + 1
-        end_index_thm = readme.index(end_marker_thm)
-
-        # Update the section with the THM badge
-        readme[start_index_thm:end_index_thm] = [thm_badge]
 
         # Write back to README.md
         with open('README.md', 'w', encoding='utf-8') as file:
@@ -114,11 +94,11 @@ def main():
         logging.info("Data fetched successfully")
 
         logging.info("Constructing SVG content...")
-        svg_content, thm_badge_url = construct_svg_content(data)
+        svg_content = construct_svg_content(data)
         logging.info("SVG content generated successfully")
 
-        logging.info("Updating README.md with SVG content and THM badge...")
-        update_readme_with_svg(svg_content, thm_badge_url)
+        logging.info("Updating README.md with SVG content...")
+        update_readme_with_svg(svg_content)
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
