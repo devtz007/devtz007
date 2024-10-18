@@ -26,8 +26,7 @@
 ## 📈 **Statistics**
 
 <!--START_SECTION:thm_badge-->
-
-        <!--END_SECTION:thm_badge-->
+<!--END_SECTION:thm_badge-->
 
 <br />
 
