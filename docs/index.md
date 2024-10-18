@@ -26,8 +26,7 @@
 ## 📈 **Statistics**
 
 <!--START_SECTION:thm_badge-->
-
-        <!--END_SECTION:thm_badge-->
+<img src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999&ts=1729227095&rand=8190" style="border:none;" /><!--END_SECTION:thm_badge-->
 
 <br />
 
@@ -36,7 +35,7 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 2,177 hrs 15 mins</p>
+                <p style="font-weight: bold;">Code times: 2,177 hrs 45 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
                 <p style="font-weight: bold;">End Date: 2024-10-18</p>
             </div>
