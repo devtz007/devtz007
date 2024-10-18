@@ -67,11 +67,12 @@ def update_readme_with_svg(svg_content):
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-<img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="Your Image Badge" />
+<img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="thm" />
             </div>
         </foreignObject>
     </svg>
         """
+
 
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
