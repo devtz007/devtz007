@@ -1,6 +1,11 @@
 import os
 import base64
 import requests
+import time
+import logging
+
+# Setup logging
+logging.basicConfig(level=logging.INFO)
 
 # Fetch WakaTime API key from environment variables
 WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
@@ -14,9 +19,22 @@ def fetch_wakatime_data():
     headers = {
         'Authorization': f'Basic {base64.b64encode(f"{WAKATIME_API_KEY}:".encode()).decode()}'
     }
-    response = requests.get(url, headers=headers)
-    response.raise_for_status()
-    return response.json()
+
+    for _ in range(5):  # Retry up to 5 times
+        try:
+            response = requests.get(url, headers=headers)
+            response.raise_for_status()  # Raise an error for bad responses
+            return response.json()
+        except requests.exceptions.HTTPError as http_err:
+            logging.error(f"HTTP error occurred: {http_err}")
+            if response.status_code == 429:  # Rate limit error
+                logging.info("Rate limit hit, waiting before retrying...")
+                time.sleep(60)  # Wait before retrying
+            else:
+                raise
+        except requests.exceptions.RequestException as req_err:
+            logging.error(f"Request error: {req_err}")
+            time.sleep(5)  # Wait before retrying on other errors
 
 # Construct SVG content
 def construct_svg_content(data):
@@ -36,53 +54,71 @@ def construct_svg_content(data):
     </svg>"""
     return svg_content
 
-# Update the README.md with SVG content
+# Update the README.md with SVG content and THM badge
 def update_readme_with_svg(svg_content):
     try:
-        # HTML content to embed SVG
         html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
         
+        # HTML for the TryHackMe badge
+        thm_badge = """<div style="width: 100%;">
+            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
+        </div>\n"""
+
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
 
-        start_marker = '<!--START_SECTION:wakatime_all_time_since_today-->\n'
-        end_marker = '<!--END_SECTION:wakatime_all_time_since_today-->\n'
+        # Update WakaTime section
+        start_marker_wakatime = '<!--START_SECTION:wakatime_all_time_since_today-->\n'
+        end_marker_wakatime = '<!--END_SECTION:wakatime_all_time_since_today-->\n'
 
-        if start_marker not in readme or end_marker not in readme:
-            raise ValueError("Markers for the section not found in README.md")
+        if start_marker_wakatime not in readme or end_marker_wakatime not in readme:
+            raise ValueError("Markers for the WakaTime section not found in README.md")
 
-        start_index = readme.index(start_marker) + 1
-        end_index = readme.index(end_marker)
+        start_index_wakatime = readme.index(start_marker_wakatime) + 1
+        end_index_wakatime = readme.index(end_marker_wakatime)
 
-        readme[start_index:end_index] = [html_img_tag]
+        # Update the section with SVG content
+        readme[start_index_wakatime:end_index_wakatime] = [html_img_tag]
 
+        # Update THM badge section
+        start_marker_thm = '<!--START_SECTION:thm_badge-->\n'
+        end_marker_thm = '<!--END_SECTION:thm_badge-->\n'
+
+        if start_marker_thm not in readme or end_marker_thm not in readme:
+            raise ValueError("Markers for the THM badge section not found in README.md")
+
+        start_index_thm = readme.index(start_marker_thm) + 1
+        end_index_thm = readme.index(end_marker_thm)
+
+        # Update the section with the THM badge
+        readme[start_index_thm:end_index_thm] = [thm_badge]
+
+        # Write back to README.md
         with open('README.md', 'w', encoding='utf-8') as file:
             file.writelines(readme)
 
-        print("README.md updated successfully")
+        logging.info("README.md updated successfully")
 
     except ValueError as ve:
-        print(f"ValueError: {ve}")
+        logging.error(f"ValueError: {ve}")
     except Exception as e:
-        print(f"Failed to update README.md: {e}")
+        logging.error(f"Failed to update README.md: {e}")
 
 def main():
     try:
-        print("Fetching WakaTime data...")
+        logging.info("Fetching WakaTime data...")
         data = fetch_wakatime_data()
-        print("Data fetched successfully:", data)
+        logging.info("Data fetched successfully")
 
-        print("Constructing SVG content...")
+        logging.info("Constructing SVG content...")
         svg_content = construct_svg_content(data)
-        print("SVG content generated successfully")
+        logging.info("SVG content generated successfully")
 
-        print("Updating README.md with SVG content...")
+        logging.info("Updating README.md with SVG content and THM badge...")
         update_readme_with_svg(svg_content)
 
-        print("README.md updated successfully")
-
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logging.error(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     main()

@@ -25,7 +25,9 @@
 
 ## 📈 **Statistics**
 
-[![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
+<!--START_SECTION:thm_badge-->
+
+<!--END_SECTION:thm_badge-->
 <br />
 
 <!--START_SECTION:wakatime_all_time_since_today-->

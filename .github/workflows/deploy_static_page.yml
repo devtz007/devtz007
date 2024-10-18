@@ -22,16 +22,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  tryhackme-badge-update:
-    name: Update TryHackMe badge with the latest image
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: p4p1/tryhackme-badge-workflow@main
-        with:
-          username: "devtz007"  # Replace with your TryHackMe username
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
