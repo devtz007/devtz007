@@ -27,7 +27,7 @@
 
 <!--START_SECTION:thm_badge-->
 <!--END_SECTION:thm_badge-->
-<br />
+
 
 <!--START_SECTION:wakatime_all_time_since_today-->
 <div style="width: 100%;">
