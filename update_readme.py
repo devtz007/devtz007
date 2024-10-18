@@ -3,6 +3,7 @@ import base64
 import requests
 import time
 import logging
+import random
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -11,8 +12,7 @@ logging.basicConfig(level=logging.INFO)
 WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
 
 if not WAKATIME_API_KEY:
-    logging.error("WAKATIME_API_KEY environment variable is not set")
-    exit(1)
+    raise ValueError("WAKATIME_API_KEY environment variable is not set")
 
 # Fetch data from WakaTime API
 def fetch_wakatime_data():
@@ -21,23 +21,21 @@ def fetch_wakatime_data():
         'Authorization': f'Basic {base64.b64encode(f"{WAKATIME_API_KEY}:".encode()).decode()}'
     }
 
-    for attempt in range(1, 6):  # Retry up to 5 times
+    for _ in range(5):  # Retry up to 5 times
         try:
             response = requests.get(url, headers=headers)
             response.raise_for_status()  # Raise an error for bad responses
             return response.json()
         except requests.exceptions.HTTPError as http_err:
-            logging.error(f"HTTP error occurred (attempt {attempt}): {http_err}")
+            logging.error(f"HTTP error occurred: {http_err}")
             if response.status_code == 429:  # Rate limit error
                 logging.info("Rate limit hit, waiting before retrying...")
                 time.sleep(60)  # Wait before retrying
             else:
-                break  # Exit on other HTTP errors
+                raise
         except requests.exceptions.RequestException as req_err:
-            logging.error(f"Request error (attempt {attempt}): {req_err}")
+            logging.error(f"Request error: {req_err}")
             time.sleep(5)  # Wait before retrying on other errors
-    logging.error("Failed to fetch WakaTime data after multiple attempts.")
-    exit(1)
 
 # Construct SVG content
 def construct_svg_content(data):
@@ -45,6 +43,9 @@ def construct_svg_content(data):
     text = data.get('text', 'N/A')
     start_date = data.get('range', {}).get('start_date', 'N/A')
     end_date = data.get('range', {}).get('end_date', 'N/A')
+
+    # Generate a cache-busting URL for the THM badge
+    thm_badge_url = f"https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999&ts={int(time.time())}&rand={random.randint(1, 10000)}"
 
     svg_content = f"""<svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
@@ -55,24 +56,16 @@ def construct_svg_content(data):
             </div>
         </foreignObject>
     </svg>"""
-    return svg_content
+
+    return svg_content, thm_badge_url
 
 # Update the README.md with SVG content and THM badge
-def update_readme_with_svg(svg_content):
+def update_readme_with_svg(svg_content, thm_badge_url):
     try:
         html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
         
-        # HTML for the TryHackMe badge
-        thm_badge = """
-  <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-        <foreignObject width="100%" height="100%">
-            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-<img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="thm" />
-            </div>
-        </foreignObject>
-    </svg>
-        """
-
+        # HTML for the TryHackMe badge with the cache-busting URL
+        thm_badge = f'<img src="{thm_badge_url}" style="border:none;" />'
 
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
@@ -121,11 +114,11 @@ def main():
         logging.info("Data fetched successfully")
 
         logging.info("Constructing SVG content...")
-        svg_content = construct_svg_content(data)
+        svg_content, thm_badge_url = construct_svg_content(data)
         logging.info("SVG content generated successfully")
 
         logging.info("Updating README.md with SVG content and THM badge...")
-        update_readme_with_svg(svg_content)
+        update_readme_with_svg(svg_content, thm_badge_url)
 
     except Exception as e:
         logging.error(f"An error occurred: {e}")
