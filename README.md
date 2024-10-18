@@ -15,7 +15,7 @@
 <br/>
 
 ## 🌟 **A little bit about me:**
-<p>Full Stack Developer with over 3 years of experience at Wolast Technologies, proficient in front-end technologies such as HTML, CSS, SASS, Vanilla JavaScript, React, Angular, and Tailwind. Additionally skilled in back-end development with PHP, Node.js, and database management using MySQL and SQL. Served as a technical lead, developing responsive user interfaces with React.js and boosting customer engagement by 25%. Expert in agile software development, rapid prototyping, and cyber security, with a proven track record of collaborating with government entities to develop and document secure software solutions.<p/>
+<p>Full Stack Developer and ethical hacker with over 5 years of experience, proficient in front-end technologies such as React, Angular, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, Node.js, and database management using MySQL and SQL. Served as a technical lead, developing responsive user interfaces with React.js and boosting customer engagement by 25%. Expert in agile software development, rapid prototyping, and cyber security, with a proven track record of collaborating with government entities to develop and document secure software solutions.<p/>
 
 - 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
@@ -30,6 +30,7 @@
 
 <br />
 
+### WakaTime
 <!--START_SECTION:wakatime_all_time_since_today-->
 <div style="width: 100%;">
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
