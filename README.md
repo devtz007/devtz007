@@ -26,7 +26,15 @@
 ## 📈 **Statistics**
 
 <!--START_SECTION:thm_badge-->
-<!--END_SECTION:thm_badge-->
+
+  <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <foreignObject width="100%" height="100%">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
+<img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="Your Image Badge" />
+            </div>
+        </foreignObject>
+    </svg>
+        <!--END_SECTION:thm_badge-->
 
 <br />
 
@@ -35,7 +43,7 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 2,177 hrs 5 mins</p>
+                <p style="font-weight: bold;">Code times: 2,177 hrs 15 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
                 <p style="font-weight: bold;">End Date: 2024-10-18</p>
             </div>
