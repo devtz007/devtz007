@@ -60,9 +60,18 @@ def update_readme_with_svg(svg_content):
         html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
         
         # HTML for the TryHackMe badge
-        thm_badge = """<div style="width: 100%;">
+        thm_badge = """
+  <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+        <foreignObject width="100%" height="100%">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
+        <div style="width: 100%;">
+            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
             [![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
-        </div>\n"""
+        </div>
+         </div>
+        </foreignObject>
+    </svg>
+        """
 
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
