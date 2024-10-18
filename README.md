@@ -29,6 +29,7 @@
 [Check out my profile on TryHackMe](https://tryhackme.com/r/p/devtz007)
 
 <br />
+
 ### WakaTime
 <!--START_SECTION:wakatime_all_time_since_today-->
 <div style="width: 100%;">
