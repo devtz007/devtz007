@@ -11,7 +11,8 @@ logging.basicConfig(level=logging.INFO)
 WAKATIME_API_KEY = os.getenv('WAKATIME_API_KEY')
 
 if not WAKATIME_API_KEY:
-    raise ValueError("WAKATIME_API_KEY environment variable is not set")
+    logging.error("WAKATIME_API_KEY environment variable is not set")
+    exit(1)
 
 # Fetch data from WakaTime API
 def fetch_wakatime_data():
@@ -20,21 +21,23 @@ def fetch_wakatime_data():
         'Authorization': f'Basic {base64.b64encode(f"{WAKATIME_API_KEY}:".encode()).decode()}'
     }
 
-    for _ in range(5):  # Retry up to 5 times
+    for attempt in range(1, 6):  # Retry up to 5 times
         try:
             response = requests.get(url, headers=headers)
             response.raise_for_status()  # Raise an error for bad responses
             return response.json()
         except requests.exceptions.HTTPError as http_err:
-            logging.error(f"HTTP error occurred: {http_err}")
+            logging.error(f"HTTP error occurred (attempt {attempt}): {http_err}")
             if response.status_code == 429:  # Rate limit error
                 logging.info("Rate limit hit, waiting before retrying...")
                 time.sleep(60)  # Wait before retrying
             else:
-                raise
+                break  # Exit on other HTTP errors
         except requests.exceptions.RequestException as req_err:
-            logging.error(f"Request error: {req_err}")
+            logging.error(f"Request error (attempt {attempt}): {req_err}")
             time.sleep(5)  # Wait before retrying on other errors
+    logging.error("Failed to fetch WakaTime data after multiple attempts.")
+    exit(1)
 
 # Construct SVG content
 def construct_svg_content(data):
@@ -64,11 +67,8 @@ def update_readme_with_svg(svg_content):
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-        <div style="width: 100%;">
-            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
-            [![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
-        </div>
-         </div>
+                <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
+            </div>
         </foreignObject>
     </svg>
         """
