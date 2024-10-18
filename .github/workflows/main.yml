@@ -4,7 +4,6 @@ on:
   push:
     branches: ["master"]
 
-
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -68,5 +67,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
-
-          
