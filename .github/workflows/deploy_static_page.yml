@@ -22,12 +22,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Single deploy job since we're just deploying
+  tryhackme-badge-update:
+    name: Update TryHackMe badge with the latest image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: p4p1/tryhackme-badge-workflow@main
+        with:
+          username: "devtz007"  # Replace with your TryHackMe username
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -36,8 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: './docs'
+          path: './docs'  # Ensure that './docs' contains your static content
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
