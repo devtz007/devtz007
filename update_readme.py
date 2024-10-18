@@ -61,7 +61,7 @@ def update_readme_with_svg(svg_content):
         
         # HTML for the TryHackMe badge
         thm_badge = """<div style="width: 100%;">
-            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
+            [![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
         </div>\n"""
 
         with open('README.md', 'r', encoding='utf-8') as file:
