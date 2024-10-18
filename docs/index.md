@@ -30,15 +30,12 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-        <div style="width: 100%;">
-            <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
-            [![TryHackMe Profile](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
-        </div>
-         </div>
+                <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style="border:none;"></iframe>
+            </div>
         </foreignObject>
     </svg>
         <!--END_SECTION:thm_badge-->
-
+<br />
 
 <!--START_SECTION:wakatime_all_time_since_today-->
 <div style="width: 100%;">
