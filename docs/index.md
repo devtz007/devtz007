@@ -15,7 +15,7 @@
 <br/>
 
 ## 🌟 **A little bit about me:**
-<p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, Angular, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, Node.js, and database management using MySQL and SQL. Expert in secured software development and cyber security.<p/>
+<p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL and SQL . Expert in secured software development and cyber security.<p/>
 
 - 📫 How to reach me: `devtz007@hotmail.com`
 - 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
@@ -36,9 +36,9 @@
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
         <foreignObject width="100%" height="100%">
             <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 2,186 hrs 36 mins</p>
+                <p style="font-weight: bold;">Code times: 2,343 hrs 53 mins</p>
                 <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-                <p style="font-weight: bold;">End Date: 2024-10-25</p>
+                <p style="font-weight: bold;">End Date: 2024-12-30</p>
             </div>
         </foreignObject>
     </svg>
