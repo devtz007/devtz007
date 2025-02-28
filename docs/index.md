@@ -18,8 +18,6 @@
 <p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL and SQL . Expert in secured software development and cyber security.<p/>
 
 - 📫 How to reach me: `devtz007@hotmail.com`
-- 💼 My Company: [Techjork IT Solutions Limited](https://www.techjork.com)
-- 🌐 Company Website: [https://www.techjork.com](https://www.techjork.com)
 
 <br/>
 
