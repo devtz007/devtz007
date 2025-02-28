@@ -18,7 +18,7 @@
 <p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL and SQL . Expert in secured software development and cyber security.<p/>
 
 - 📫 How to reach me: `devtz007@hotmail.com`
-- 📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a>
+- 📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a>  (Message first)
 
 
 <br/>
