@@ -80,8 +80,6 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
 
-<hr/>
-
 <h3>WakaTime</h3>
 <div class="wakatime_container" style="width: 100%;">
   <div align="left">
