@@ -23,6 +23,7 @@
 <a href="https://raw.githubusercontent.com/devtz007/devtz007/master/assets/cv/mohaiminul_tazin_front_end_dev_cv.pdf" download>
   Download my Curriculum Vitae
 </a>
+</br>
 <a href="https://github.com/devtz007/projects">
   View my projects
 </a>
