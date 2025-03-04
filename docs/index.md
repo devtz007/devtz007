@@ -19,7 +19,6 @@
 
 <h2>🌟 About Me:</h2>
 <p>Full Stack Developer with over 6 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL, and SQL. Expert in secured software development and cyber security.</p>
-</br>
 <a href="https://raw.githubusercontent.com/devtz007/devtz007/master/assets/cv/mohaiminul_tazin_front_end_dev_cv.pdf" download>
   Download my Curriculum Vitae
 </a>
