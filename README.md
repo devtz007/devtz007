@@ -72,7 +72,10 @@
 <h2>📈 Statistics</h2>
 
 <h3>TryHackMe</h3>
-<p><a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a></p>
+<div> 
+<img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="Your Image Badge" />
+<a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a>
+</div>
 
 <h3>📊 GitHub Stats:</h3>
 <div align="center">
