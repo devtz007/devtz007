@@ -23,7 +23,7 @@
 <ul>
   <li>📫 How to reach me: <code>devtz007@hotmail.com</code></li>
   <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
-  <li>📄 <a href="path_to_your_cv.pdf" download>Click here to download</a></li>
+  <li>📄 <a href="https://github.com/devtz007/devtz007/blob/master/assets/cv/mohaiminul_tazin_front_end_dev_cv.pdf" download>Download my Curriculum Vitae</a></li>
 </ul>
 
 <hr />
