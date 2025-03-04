@@ -31,15 +31,6 @@
 
 <hr/>
 
-<h3>WakaTime</h3>
-<div class="wakatime_container" style="width: 100%;">
-<div align="left">
-  <img src="https://wakatime.com/share/@devtz007/f63aa020-0d29-4816-b42f-c82fea140ad3.svg" alt="WakaTime Stats" width="400"/>
-</div>
-</div>
-
-<hr/>
-
 <h2>🌐 Connect with Me:</h2>
 <div>
   <a href="https://twitter.com/devtz007" target="_blank">
@@ -64,9 +55,14 @@
 
 <h2>🛠 Tech Stack:</h2>
 <div align="center">
+<img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js Badge"/>
+
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Badge"/>
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Badge"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite Badge"/>
+<img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black" alt="Webpack Badge"/>
+
   <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP Badge"/>
   <img src="https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white" alt="WordPress Badge"/>
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Badge"/>
@@ -86,3 +82,11 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
 
+<hr/>
+
+<h3>WakaTime</h3>
+<div class="wakatime_container" style="width: 100%;">
+<div align="left">
+  <img src="https://wakatime.com/share/@devtz007/f63aa020-0d29-4816-b42f-c82fea140ad3.svg" alt="WakaTime Stats" width="400"/>
+</div>
+</div>
