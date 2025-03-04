@@ -24,6 +24,7 @@ def fetch_wakatime_data():
         try:
             response = requests.get(url, headers=headers)
             response.raise_for_status()  # Raise an error for bad responses
+            logging.info(f"Response: {response.json()}")  # Log the response for debugging
             return response.json()
         except requests.exceptions.HTTPError as http_err:
             logging.error(f"HTTP error occurred: {http_err}")
@@ -39,6 +40,7 @@ def fetch_wakatime_data():
 # Construct SVG content
 def construct_svg_content(data):
     data = data.get('data', {})
+    logging.info(f"Data from WakaTime: {data}")  # Log the parsed data for debugging
     text = data.get('text', 'N/A')
     start_date = data.get('range', {}).get('start_date', 'N/A')
     end_date = data.get('range', {}).get('end_date', 'N/A')
@@ -95,7 +97,7 @@ def main():
 
         logging.info("Constructing SVG content...")
         svg_content = construct_svg_content(data)
-        logging.info("SVG content generated successfully")
+        logging.info(f"SVG content generated: {svg_content[:200]}...")  # Log the first 200 characters of SVG content for debugging
 
         logging.info("Updating README.md with SVG content...")
         update_readme_with_svg(svg_content)
@@ -105,4 +107,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
