@@ -74,13 +74,13 @@
 
 <hr/>
 
-<h2>📊 GitHub Stats:</h2>
+<h3>📊 GitHub Stats:</h3>
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=devtz007&show_icons=true&theme=radical" alt="GitHub Stats"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
 
-<h3>WakaTime</h3>
+<h3>🕒 WakaTime</h3>
 <div class="wakatime_container" style="width: 100%;">
   <div align="left">
     <img src="https://wakatime.com/share/@devtz007/f63aa020-0d29-4816-b42f-c82fea140ad3.svg" alt="WakaTime Stats" width="400"/>
