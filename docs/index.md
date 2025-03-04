@@ -1,7 +1,10 @@
 <h1 style="font-size: 24px; color: #2e6c80;">About devtz007</h1>
 
 <div align="center">
-  <img src="https://avatars.githubusercontent.com/u/42093651?v=4" alt="Profile Picture" width="150" />
+<img src="https://avatars.githubusercontent.com/u/42093651?v=4" 
+     alt="Profile Picture" 
+     width="150" 
+     style="border-radius: 50%; border: 4px solid #2e6c80;" />
   <h2 style="color: #2e6c80;">👋 Hello, I'm devtz007!</h2>
   <p>
     <em>
@@ -15,7 +18,7 @@
 <hr/>
 
 <h2>🌟 About Me:</h2>
-<p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL, and SQL. Expert in secured software development and cyber security.</p>
+<p>Full Stack Developer with over 6 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL, and SQL. Expert in secured software development and cyber security.</p>
 
 <ul>
   <li>📫 How to reach me: <code>devtz007@hotmail.com</code></li>
@@ -47,7 +50,7 @@
 <hr/>
 
 <h2>🛠 Tech Stack:</h2>
-<div align="center">
+<div align="left">
   <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js Badge"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Badge"/>
