@@ -33,7 +33,8 @@
 
 <h3>WakaTime</h3>
 <div class="wakatime_container" style="width: 100%;">
-<figure><embed src="https://wakatime.com/share/@devtz007/f63aa020-0d29-4816-b42f-c82fea140ad3.svg"></embed></figure>
+<img src="https://wakatime.com/share/@devtz007/f63aa020-0d29-4816-b42f-c82fea140ad3.svg" alt="WakaTime Stats"/>
+
 </div>
 
 <hr/>
