@@ -24,13 +24,6 @@
 
 <hr/>
 
-<h2>📈 Statistics</h2>
-
-<h3>TryHackMe</h3>
-<p><a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a></p>
-
-<hr/>
-
 <h2>🌐 Connect with Me:</h2>
 <div>
   <a href="https://twitter.com/devtz007" target="_blank">
@@ -71,6 +64,13 @@
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"/>
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
+
+<hr/>
+
+<h2>📈 Statistics</h2>
+
+<h3>TryHackMe</h3>
+<p><a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a></p>
 
 <hr/>
 
