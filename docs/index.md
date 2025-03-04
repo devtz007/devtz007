@@ -23,6 +23,7 @@
 <ul>
   <li>📫 How to reach me: <code>devtz007@hotmail.com</code></li>
   <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
+  <li>📄 <a href="path_to_your_cv.pdf" download>Click here to download</a></li>
 </ul>
 
 <hr />
