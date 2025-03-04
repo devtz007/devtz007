@@ -32,7 +32,7 @@
 <hr/>
 
 <h3>WakaTime</h3>
-<div style="width: 100%;">
+<div class="wakatime_container" style="width: 100%;">
   <!--START_SECTION:wakatime_all_time_since_today-->
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
     <foreignObject width="100%" height="100%">

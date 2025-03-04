@@ -58,7 +58,7 @@ def construct_svg_content(data):
 # Update the README.md with SVG content
 def update_readme_with_svg(svg_content):
     try:
-        html_img_tag = f'<div style="width: 100%;">\n  {svg_content}\n</div>\n'
+        html_img_tag = f'<div class="wakatime_container" style="width: 100%;">\n  {svg_content}\n</div>\n'
         
         with open('README.md', 'r', encoding='utf-8') as file:
             readme = file.readlines()
