@@ -19,15 +19,20 @@
 
 <h2>🌟 About Me:</h2>
 <p>Full Stack Developer with over 6 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL, and SQL. Expert in secured software development and cyber security.</p>
-
-<ul>
-  <li>📫 How to reach me: <code>devtz007@hotmail.com</code></li>
-  <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
-  <li>📄 <a href="https://raw.githubusercontent.com/devtz007/devtz007/master/assets/cv/mohaiminul_tazin_front_end_dev_cv.pdf" download>
+</br>
+<a href="https://raw.githubusercontent.com/devtz007/devtz007/master/assets/cv/mohaiminul_tazin_front_end_dev_cv.pdf" download>
   Download my Curriculum Vitae
 </a>
-</li>
+<a href="https://github.com/devtz007/projects">
+  View my projects
+</a>
+
+<h3>How to reach me</h3>
+<ul>
+  <li>📫 Email: <code>devtz007@hotmail.com</code></li>
+  <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
 </ul>
+
 
 <hr />
 
