@@ -33,11 +33,8 @@
 
 <h3>WakaTime</h3>
 <div class="wakatime_container" style="width: 100%;">
-  <!--START_SECTION:wakatime_all_time_since_today-->
-  <!-- Dynamic SVG content will be inserted here -->
-  <!--END_SECTION:wakatime_all_time_since_today-->
+<figure><embed src="https://wakatime.com/share/@devtz007/f63aa020-0d29-4816-b42f-c82fea140ad3.svg"></embed></figure>
 </div>
-
 
 <hr/>
 
