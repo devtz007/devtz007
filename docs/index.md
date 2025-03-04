@@ -33,15 +33,17 @@
 
 <h3>WakaTime</h3>
 <div style="width: 100%;">
+  <!--START_SECTION:wakatime_all_time_since_today-->
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
     <foreignObject width="100%" height="100%">
       <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-        <p style="font-weight: bold;">Code times: 2,628 hrs 34 mins</p>
-        <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-        <p style="font-weight: bold;">End Date: 2025-03-01</p>
+        <p style="font-weight: bold;">Code times: <!--Dynamic Code Time--></p>
+        <p style="font-weight: bold;">Start Date: <!--Dynamic Start Date--></p>
+        <p style="font-weight: bold;">End Date: <!--Dynamic End Date--></p>
       </div>
     </foreignObject>
   </svg>
+  <!--END_SECTION:wakatime_all_time_since_today-->
 </div>
 
 <hr/>
