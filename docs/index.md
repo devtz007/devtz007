@@ -1,4 +1,4 @@
-<h1 style="font-size: 14px; color: #2e6c80;">About devtz007</h1>
+<h1 style="font-size: 24px; color: #2e6c80;">About devtz007</h1>
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/42093651?v=4" alt="Profile Picture" width="150" />
@@ -12,43 +12,41 @@
   </p>
 </div>
 
-<br/>
+<hr/>
 
-## 🌟 **About me:**
-<p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL and SQL . Expert in secured software development and cyber security.<p/>
+<h2>🌟 About Me:</h2>
+<p>Full Stack Developer with over 5 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL, and SQL. Expert in secured software development and cyber security.</p>
 
-- 📫 How to reach me: `devtz007@hotmail.com`
-- 📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a>  (Message first)
+<ul>
+  <li>📫 How to reach me: <code>devtz007@hotmail.com</code></li>
+  <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
+</ul>
 
+<hr/>
 
-<br/>
+<h2>📈 Statistics</h2>
 
-## 📈 **Statistics**
+<h3>TryHackMe</h3>
+<p><a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a></p>
 
-### TryHackMe
-[Check out my profile on TryHackMe](https://tryhackme.com/r/p/devtz007)
+<hr/>
 
-<br />
-
-### WakaTime
-<!--START_SECTION:wakatime_all_time_since_today-->
+<h3>WakaTime</h3>
 <div style="width: 100%;">
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-        <foreignObject width="100%" height="100%">
-            <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
-                <p style="font-weight: bold;">Code times: 2,628 hrs 34 mins</p>
-                <p style="font-weight: bold;">Start Date: 2022-06-14</p>
-                <p style="font-weight: bold;">End Date: 2025-03-01</p>
-            </div>
-        </foreignObject>
-    </svg>
+    <foreignObject width="100%" height="100%">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: Arial, sans-serif; font-size: 14px;">
+        <p style="font-weight: bold;">Code times: 2,628 hrs 34 mins</p>
+        <p style="font-weight: bold;">Start Date: 2022-06-14</p>
+        <p style="font-weight: bold;">End Date: 2025-03-01</p>
+      </div>
+    </foreignObject>
+  </svg>
 </div>
-<!--END_SECTION:wakatime_all_time_since_today-->
 
-<br/>
+<hr/>
 
-## 🌐 **Connect with Me:**
-
+<h2>🌐 Connect with Me:</h2>
 <div>
   <a href="https://twitter.com/devtz007" target="_blank">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter Badge"/>
@@ -61,16 +59,16 @@
   </a>
 </div>
 
-<br/>
+<hr/>
 
-### **I am also available at**  
+<h3>I am also available at</h3>  
+<a href="https://www.fiverr.com/addison007">
+  <img src="https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr" alt="Fiverr Badge"/>
+</a>
 
-[![Fiverr Badge](https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr)](https://www.fiverr.com/addison007)
+<hr/>
 
-<br/>
-
-## 🛠 **Tech Stack:**
-
+<h2>🛠 Tech Stack:</h2>
 <div align="center">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript Badge"/>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript Badge"/>
@@ -86,15 +84,10 @@
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge"/>
 </div>
 
+<hr/>
 
-
-<br/>
-
-## 📊 **GitHub Stats:**
-
+<h2>📊 GitHub Stats:</h2>
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=devtz007&show_icons=true&theme=radical" alt="GitHub Stats"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
-
-<br/>
