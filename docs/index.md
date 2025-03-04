@@ -32,7 +32,7 @@
 <hr/>
 
 <h3>WakaTime</h3>
-<div style="width: 100%;">
+<div class="wakatime_container" style="width: 100%;">
   <!--START_SECTION:wakatime_all_time_since_today-->
   <svg width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
     <foreignObject width="100%" height="100%">
@@ -93,3 +93,4 @@
   <img src="https://github-readme-stats.vercel.app/api?username=devtz007&show_icons=true&theme=radical" alt="GitHub Stats"/>
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=devtz007&layout=compact&theme=radical" alt="Top Languages"/>
 </div>
+
