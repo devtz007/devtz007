@@ -72,8 +72,6 @@
 <h3>TryHackMe</h3>
 <p><a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a></p>
 
-<hr/>
-
 <h3>📊 GitHub Stats:</h3>
 <div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=devtz007&show_icons=true&theme=radical" alt="GitHub Stats"/>
