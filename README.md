@@ -29,7 +29,7 @@
 
 <h3>How to reach me</h3>
 <ul>
-  <li>📫 Email: <code>devtz007@gmail.com</code></li>
+  <li>📫 Email: <code>mail.devtz007@gmail.com</code></li>
   <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
 </ul>
 
@@ -44,7 +44,7 @@
   <a href="https://linkedin.com/in/devtz007" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge" />
   </a>
-  <a href="mailto:devtz007@hotmail.com" target="_blank">
+  <a href="mailto:mail.devtz007@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Badge" />
   </a>
 </div>
