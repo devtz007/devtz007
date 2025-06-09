@@ -29,7 +29,7 @@
 
 <h3>How to reach me</h3>
 <ul>
-  <li>📫 Email: <code>devtz007@hotmail.com</code></li>
+  <li>📫 Email: <code>devtz007@gmail.com</code></li>
   <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
 </ul>
 
@@ -50,7 +50,7 @@
 </div>
 
 <h3>I am also available at</h3>
-<a href="https://www.fiverr.com/addison007">
+<a href="https://www.fiverr.com/s/2KLVvLk">
   <img src="https://img.shields.io/badge/Fiverr-Addison007-green?style=flat&logo=fiverr" alt="Fiverr Badge" />
 </a>
 
