@@ -24,7 +24,7 @@
 </a>
 
 <a href="https://github.com/devtz007/projects">
-  📁 View my projects
+   📁 View my projects
 </a>
 
 <h3>How to reach me</h3>
@@ -72,6 +72,7 @@
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Badge" />
   <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge" />
   <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Badge" />
+  <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X Badge" />
 </div>
 
 <hr />
