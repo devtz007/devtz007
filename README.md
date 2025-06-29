@@ -19,7 +19,7 @@
 
 <h2>🌟 About Me:</h2>
 <p>Full Stack Web Developer specializing in modern web technologies and secure software development. Proficient in front-end frameworks and libraries such as Next.js 15, React, TypeScript, Vanilla JavaScript, HTML5, CSS, SCSS, Tailwind, and Bootstrap. Skilled in back-end development using PHP, MySQL, and SQL, with strong experience in RESTful APIs, JSON, and AJAX. Demonstrated expertise in cyber security, ensuring applications are built with robust security practices. Experienced with Git, GitHub, and collaborative development workflows. Also familiar with WordPress customization and UI/UX design tools like Figma. Committed to building performant, scalable, and secure web applications.</p>
-<a href="https://blob.githubusercontent.com/devtz007/devtz007/master/assets/cv/devtz007_front_end_web_developing_cv.pdf" download>
+<a href="https://github.com/devtz007/devtz007/raw/master/assets/cv/devtz007_front_end_web_developing_cv.pdf" download>
   📥 Download My Web Developer CV
 </a>
 
