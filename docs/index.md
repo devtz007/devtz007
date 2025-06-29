@@ -18,11 +18,11 @@
 <hr />
 
 <h2>🌟 About Me:</h2>
-<p>Full Stack Developer with over 6 years of experience, proficient in front-end technologies such as React, SASS, Vanilla JavaScript, and Tailwind. Additionally skilled in back-end development with PHP, MySQL, and SQL. Expert in secured software development and cyber security.</p>
+<p>Full Stack Web Developer specializing in modern web technologies and secure software development. Proficient in front-end frameworks and libraries such as Next.js 15, React, TypeScript, Vanilla JavaScript, HTML5, CSS, SCSS, Tailwind, and Bootstrap. Skilled in back-end development using PHP, MySQL, and SQL, with strong experience in RESTful APIs, JSON, and AJAX. Demonstrated expertise in cyber security, ensuring applications are built with robust security practices. Experienced with Git, GitHub, and collaborative development workflows. Also familiar with WordPress customization and UI/UX design tools like Figma. Committed to building performant, scalable, and secure web applications.</p>
 <a href="https://raw.githubusercontent.com/devtz007/devtz007/master/assets/cv/mohaiminul_tazin_front_end_dev_cv.pdf" download>
   Download my Curriculum Vitae
 </a>
-</br>
+
 <a href="https://github.com/devtz007/projects">
   View my projects
 </a>
@@ -32,7 +32,6 @@
   <li>📫 Email: <code>mail.devtz007@gmail.com</code></li>
   <li>📱 WhatsApp: <a href="https://wa.me/01307565052" target="_blank">Click here to chat with me on WhatsApp</a> (Message first)</li>
 </ul>
-
 
 <hr />
 
