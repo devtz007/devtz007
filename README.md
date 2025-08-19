@@ -80,7 +80,7 @@
 
 <h3>TryHackMe</h3>
 <div>
-  <img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="Your Image Badge" />
+  [![TryHackMe Badge](https://tryhackme-badges.s3.amazonaws.com/devtz007.png)](https://tryhackme.com/r/p/devtz007)
   <br />
   <a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a>
 </div>
