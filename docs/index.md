@@ -80,7 +80,7 @@
 
 <h3>TryHackMe</h3>
 <div>
-  <img src="https://tryhackme-badges.s3.amazonaws.com/devtz007.png" alt="Your Image Badge" />
+  <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999" style='border:none;'></iframe>
   <br />
   <a href="https://tryhackme.com/r/p/devtz007">Check out my profile on TryHackMe</a>
 </div>
