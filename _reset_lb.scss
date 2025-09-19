@@ -1,0 +1,282 @@
+//*******Reset*******//
+//Resetting font-family, text size adjustment, and tap highlight color for HTML
+html {
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+//Inheriting box-sizing and setting word-break and word-wrap properties
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: inherit;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  border-width: 0;
+  border-style: solid;
+}
+
+body {
+  line-height: 1.5;
+}
+
+//Resetting margin, padding, border, outline, font-size, font, vertical-align, and line-height for all elements
+html,
+body,
+div,
+section,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+/* stylelint-disable-next-line no-duplicate-selectors */
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button,
+a {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+code,
+pre {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+//Resetting font-size and font-weight for heading elements
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+//Resetting list-style for ordered and unordered lists
+ol,
+ul {
+  list-style: none;
+}
+
+//Setting display and vertical alignment for certain media elements
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  vertical-align: middle;
+}
+
+//Setting maximum width for images and videos to prevent overflow
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+//Setting styles for buttons and links
+button,
+a {
+  cursor: pointer;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: normal;
+  color: blue;
+  text-transform: none;
+  border-width: 0;
+  background-color: transparent;
+}
+
+//Removing default focus outline for buttons and links
+button:focus,
+a:focus {
+  outline: none;
+}
+
+//Setting display property for semantic elements
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+//Removing default quotes for blockquote and q elements
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: ’’;
+  content: none;
+}
+
+//Removing default text-decoration for inserted elements
+ins {
+  text-decoration: none;
+}
+
+//Setting text-decoration for deleted elements
+del {
+  text-decoration: line-through;
+}
+
+//Resetting table border properties
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+//******* This section provides styles for date picker input ********//
+// Styling date picker input fields
+input[type="date"]::-webkit-datetime-edit {
+  padding: 0;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  background-color: none;
+}
+
+input[type="date"]::-webkit-datetime-edit-text {
+  color: inherit;
+  padding: 0 0.45em;
+}
+
+//Styling month field
+input[type="date"]::-webkit-datetime-edit-month-field {
+  color: inherit;
+  text-transform: uppercase;
+}
+
+//Styling day field
+input[type="date"]::-webkit-datetime-edit-day-field {
+  color: inherit;
+  text-transform: uppercase;
+}
+
+//Styling year field
+input[type="date"]::-webkit-datetime-edit-year-field {
+  color: inherit;
+  text-transform: uppercase;
+}
+
+// Hiding inner spin button
+input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+// Styling calendar picker indicator
+input[type="date"]::-webkit-calendar-picker-indicator {
+  height: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 0;
+  opacity: 0.5;
+
+  //Applying filters for visual effects
+  filter: invert(39%) sepia(85%) saturate(5644%) hue-rotate(206deg) brightness(106%) contrast(101%);
+}
+
+// Hover effect for calendar picker indicator
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+//------- By techjork.com and devtz007-------//

@@ -1,0 +1,44 @@
+//_mixin_reusable.scss
+
+// Gradient text mixin
+@mixin gradient-text($gradient) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; // Firefox
+}
+
+// claymorphism
+@mixin claymorphism-type-1($bgColor: green) {
+  backdrop-filter: blur(5px);
+  box-shadow: inset -8px -8px 16px 0 rgb(var($bgColor), 0.15),
+    inset 0 11px 28px 0 rgb(var($bgColor));
+}
+
+// Light neon effect mixin
+@mixin neon-light($color) {
+  text-shadow: 0 0 2px rgba($color, 0.4), 0 0 4px rgba($color, 0.3),
+    0 0 6px rgba($color, 0.2), 0 0 10px rgba($color, 0.1);
+}
+
+// neon flicker
+@mixin neon-flicker($name: neon-flicker, $duration: 1.5s, $intensity: 0.6) {
+  @keyframes #{$name} {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    24%,
+    55% {
+      opacity: $intensity;
+    }
+  }
+
+  animation: #{$name} $duration infinite alternate;
+}

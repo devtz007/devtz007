@@ -1,0 +1,726 @@
+@use "./reset_lb";
+@use "./mixin_reusable" as mre;
+@use "./mixin_flex_lb.module" as mif;
+
+// Define variables
+$main-bg: #0b121f;
+$hamburger-exit: #3097bf;
+
+// Palette derived from html_portfolio_website_10.png
+$text-primary: #e5edf7 !default;
+$text-muted: #a0b3c7 !default;
+$panel-bg: #111827 !default;
+$panel-border: #292f33 !default;
+$brand-cyan: #2ca9bc !default;
+$brand-teal: #319197 !default;
+$brand-pink: #e7717d !default;
+
+//social icons color
+$social-facebook: #1877f2 !default;
+$social-twitter: #1da1f2 !default;
+$social-linkedin: #0a66c2 !default;
+$social-email: #0072c6 !default;
+$highlight-accent: #ffd662 !default;
+
+// Missing variable defaults
+$hamburger-color: #3097bf !default;
+$button-bg: transparent !default;
+$btn1: #ff7a18 !default;
+$btn2: #3097bf !default;
+$btn3: crimson !default;
+$btn4: #4caf50 !default;
+$btn5: #8a2be2 !default;
+$btn6: #ff4081 !default;
+
+html {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+body {
+  background: $main-bg;
+  overflow: hidden;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+h1,
+h2 {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+h1 {
+  font-size: 2.5em;
+  font-weight: 900;
+  margin-top: 20px;
+  @include mre.gradient-text(
+    linear-gradient(130deg, #ff7a18 0%, #af002d 41.07%, #319197 76.05%)
+  );
+}
+h2 {
+  font-size: 4em;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+.p1 {
+  color: $text-muted;
+  font-size: 1.2em;
+}
+
+.centering {
+  @include mif.flex-jc-ac;
+  width: 100%;
+  height: 100%;
+}
+
+#hamburger {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 2em;
+  font-weight: 900;
+  color: $hamburger-exit;
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+    color: $brand-cyan;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    line-height: 15px;
+    color: rgb(var(--second-text-color));
+  }
+}
+button,
+a {
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  @media (max-width: 1200px) {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  @media (max-width: 992px) {
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 671px) {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+#hamburger {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  z-index: 2;
+  font-size: 25px;
+  display: flex;
+  display: none;
+  button {
+    color: whitesmoke;
+    padding: 0px;
+    font-size: 30px;
+    display: flex;
+    color: $hamburger-color;
+    background: none;
+    &:nth-last-child(1) {
+      display: block;
+    }
+  }
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
+
+#hamburger-exit {
+  position: absolute;
+  top: 25px;
+  left: 60%;
+  transform: translate(-20px, -0px);
+  z-index: 2;
+  font-family: var(--font-heading);
+  color: $hamburger-exit;
+  font-size: 25px;
+  display: none;
+}
+
+/* Styles continue below */
+#hamburger-exit {
+  position: absolute;
+  top: 25px;
+  left: 60%;
+  transform: translate(-20px, -0px);
+  z-index: 2;
+  background: inherit;
+  color: $hamburger-exit;
+  font-size: 25px;
+  display: none;
+}
+.hamburger-active {
+  display: flex !important;
+  transition: 0.5s all ease-in-out !important;
+  width: 75px !important;
+}
+
+@media only screen and (max-width: 768px) {
+  #hamburger {
+    display: block;
+  }
+}
+
+/*------------------------------------*\
+            Button
+\*------------------------------------*/
+
+sidebar {
+  position: relative;
+  @include mif.flex-jc-ac;
+  background-color: $button-bg;
+  border-left: 1px solid $panel-border;
+  border-right: 1px solid $panel-border;
+  nav {
+    display: flex;
+    flex-direction: column;
+
+    button {
+      @include mif.flex-jc-ac;
+      margin: 0;
+      padding: 25px;
+      background-color: inherit;
+      text-align: center;
+      transition: background 0.3s ease-in-out;
+
+      cursor: pointer;
+
+      &:nth-child(1) {
+        color: $btn1;
+      }
+      &:nth-child(2) {
+        color: $btn2;
+      }
+      &:nth-child(3) {
+        color: $btn3;
+      }
+      &:nth-child(4) {
+        color: $btn4;
+      }
+      &:nth-child(5) {
+        color: $btn5;
+      }
+      &:nth-child(6) {
+        color: $btn6;
+      }
+      i {
+        font-size: 1.2em;
+        transition: transform 0.6s ease-in-out;
+      }
+    }
+    .btn-active {
+      transform: scale(1.5);
+    }
+  }
+}
+
+/*------------------------------------*\
+               All Page's
+\*------------------------------------*/
+.page-container {
+  width: 100%;
+  height: 100%;
+
+  .page {
+    position: relative;
+    z-index: 1;
+    @include mif.flex-jc-ac;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    &::before {
+      background-repeat: no-repeat;
+      background-position: left;
+      background-size: cover;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+   
+      background: linear-gradient(
+        120deg,
+        $main-bg 0%,
+        $main-bg 80%,
+        $main-bg 100%
+      );
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  .centering {
+    @include mif.flex-col-jc-ac;
+  }
+}
+
+/*------------------------------------*\
+           Profile
+\*------------------------------------*/
+.profile {
+  &::before {
+    background-image: url("picture/code.jpg");
+  }
+
+  .profile-image {
+    @include mif.flex-jc-ac;
+
+    img {
+      @media (width <= 600px) {
+        width: 180px;
+      }
+    }
+  }
+
+  /* clock */
+  .clock {
+    height: 250px;
+    width: 250px;
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    background: $panel-bg;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url("picture/portfolio.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 100%;
+      opacity: 0.2;
+      transition: 0.6s all ease;
+    }
+
+    &:hover {
+      &::before {
+        opacity: 1;
+        z-index: 5;
+      }
+    }
+
+    @media (width <= 600px) {
+      height: 250px;
+      width: 250px;
+    }
+
+    /* Time numbers */
+    .three,
+    .six,
+    .nine,
+    .twelve {
+      position: absolute;
+      font-size: 1.2em;
+      font-weight: 700;
+      color: $brand-pink;
+      opacity: 0.2;
+    }
+    .three {
+      top: 50%;
+      left: 102%;
+    }
+
+    .six {
+      top: 102%;
+      left: 50%;
+    }
+
+    .nine {
+      top: 50%;
+      right: 102%;
+    }
+
+    .twelve {
+      bottom: 102%;
+      left: 50%;
+    }
+
+    /*times indicator*/
+    //center dot
+    .clock-center {
+      width: 15px;
+      height: 15px;
+      background: $brand-pink;
+      border-radius: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 4;
+    }
+
+    /*seconds*/
+    #seconds {
+      height: 230px;
+      background: none;
+      width: 1px;
+      position: absolute;
+      z-index: 4;
+      transform-origin: 50% 50%;
+      display: flex;
+      flex-direction: column;
+      .half1 {
+        background: $brand-pink;
+        height: 50%;
+        width: 100%;
+      }
+      .half2 {
+        background: none;
+        height: 50%;
+        width: 100%;
+      }
+    }
+
+    /*minutes*/
+    #minutes {
+      height: 190px;
+      width: 2px;
+      position: absolute;
+      z-index: 3;
+      transform-origin: 50% 50%;
+      .half1 {
+        background: #afd174;
+        height: 50%;
+        width: 100%;
+      }
+      .half2 {
+        background: none;
+        height: 50%;
+        width: 100%;
+      }
+    }
+
+    /*hours*/
+    #hours {
+      height: 160px;
+      width: 3px;
+      position: absolute;
+      z-index: 2;
+      transform-origin: 50% 50%;
+      .half1 {
+        background: #c2c9cf;
+        height: 50%;
+        width: 100%;
+      }
+      .half2 {
+        background: none;
+        height: 50%;
+        width: 100%;
+      }
+    }
+  }
+
+  /* social icons */
+  .social-icons {
+    margin-top: 20px;
+    z-index: 0;
+
+    a {
+      margin: 10px;
+      font-size: 35px;
+      text-align: center;
+      color: $text-primary;
+      transition: all 0.8s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: #88d958 !important;
+      }
+
+      &:nth-child(1) {
+        color: $social-facebook;
+      }
+
+      &:nth-child(2) {
+        color: $social-twitter;
+      }
+
+      &:nth-child(3) {
+        color: $social-linkedin;
+      }
+
+      &:nth-child(4) {
+        color: $social-email;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+        Information
+\*------------------------------------*/
+
+.info {
+  text-align: center;
+  position: relative;
+
+  &::before {
+    background-image: url("picture/pikachu.png");
+  }
+
+  h2 {
+    color: #3097bf;
+  }
+}
+
+/*------------------------------------*\
+           skills
+\*------------------------------------*/
+
+.skills {
+  &::before {
+    background-image: url("vector/star.jpg");
+  }
+
+  h2 {
+    color: crimson;
+  }
+  .skill-bar {
+    width: 50%;
+
+    p {
+      color: $text-muted;
+    }
+  }
+
+  .skill-container {
+    background: $text-muted;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid $text-muted;
+    border-radius: 10px;
+  }
+
+  .skill {
+    text-align: right;
+    padding: 2px 5px;
+    color: $text-muted;
+    font-size: 1em;
+  }
+
+  // Skill bars
+  .html5 {
+    background: #522e74;
+    width: 90%;
+    animation: animate-HTML 4s;
+  }
+
+  .css {
+    background: #b9c406;
+    width: 80%;
+    animation: animate-CSS 4s;
+  }
+
+  .javaScript {
+    background: #1b2c58;
+    width: 60%;
+    animation: animate-JS 4s;
+  }
+
+  .php {
+    background: #107150;
+    width: 65%;
+    animation: animate-PHP 4s;
+  }
+
+  .mySqli {
+    background: #1ecfd5;
+    width: 70%;
+    animation: animate-MYSQLI 4s;
+  }
+
+  .photoShop {
+    background: #5b868d;
+    width: 20%;
+    animation: animate-PS 4s;
+  }
+
+  // Keyframes
+  @keyframes animate-HTML {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes animate-CSS {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 80%;
+    }
+  }
+
+  @keyframes animate-JS {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 60%;
+    }
+  }
+
+  @keyframes animate-PHP {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 65%;
+    }
+  }
+
+  @keyframes animate-MYSQLI {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 70%;
+    }
+  }
+
+  @keyframes animate-PS {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 20%;
+    }
+  }
+}
+
+/*------------------------------------*\
+          hireMe
+\*------------------------------------*/
+.hireMe {
+  &::before {
+    background-image: url("vector/global-map.jpg");
+  }
+
+  h2 {
+    color: #4caf50;
+  }
+
+  .hire-me-btns {
+    padding: 20px;
+
+    a {
+      outline: none;
+      text-decoration: none;
+      color: $text-primary;
+      font-size: 18px;
+      padding: 10px;
+      margin: 10px;
+      background: $panel-border;
+      border: 1px solid $panel-border;
+      transition: background 0.3s ease, color 0.3s ease;
+      text-align: center;
+
+      &:nth-child(1) {
+        color: #6fda44;
+        border: 1px solid #6fda44;
+
+        &:hover {
+          background: #6fda44;
+          color: $text-primary;
+        }
+      }
+
+      &:hover {
+        background: $panel-border;
+      }
+    }
+  }
+}
+
+/*------------------------------------*\
+         Terms and coondition Page-6
+\*------------------------------------*/
+.terms-condition::before {
+  background-image: url("vector/leaf.png");
+  background-repeat: repeat;
+  background-size: 150px;
+  background-position: initial;
+  background-attachment: fixed;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  z-index: -1;
+}
+.terms-condition .centering {
+  text-align: center;
+  color: snow;
+}
+
+.terms-condition h1 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  width: 80%;
+  color: $highlight-accent;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.terms-condition p {
+  margin-bottom: 50px;
+  font-style: italic;
+  width: 80%;
+  color: snow;
+  font-size: 19px;
+  letter-spacing: 2px;
+  line-height: 20px;
+  font-family: "Handlee", cursive;
+}
+
+.terms-condition h2 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  width: 80%;
+  color: $highlight-accent;
+  font-family: "Open Sans", sans-serif;
+}
+
+.terms-condition a {
+  color: snow;
+  font-size: 20px;
+  font-family: "Handlee", cursive;
+  font-style: italic;
+}
