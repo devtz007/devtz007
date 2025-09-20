@@ -14,7 +14,7 @@ const pageColors = ["#21252B", "#21252B", "#21252B", "#21252B", "#445577"];
 // Hide all pages except the first
 const pages = document.querySelectorAll(".page");
 pages.forEach((page, index) => {
-  page.style.display = index === 0 ? "block" : "none";
+  page.style.display = index === 0 ? "flex" : "none";
 });
 
 // Activate the first button
@@ -39,7 +39,7 @@ if (navBar) {
 
 function switchPage(id) {
   pages.forEach((page, i) => {
-    page.style.display = i + 1 === id ? "block" : "none";
+    page.style.display = i + 1 === id ? "flex" : "none";
   });
 
   buttons.forEach((btn, i) => {
@@ -65,7 +65,7 @@ function imgChange(id) {
       .getElementById(`image-container${i}`)
       .classList.toggle("image-container-active", i === id);
     document.getElementById(`show-more${i}`).style.display =
-      i === id ? "block" : "none";
+      i === id ? "flex" : "none";
   }
 }
 
@@ -124,4 +124,5 @@ function clickCross() {
   const sidebar = document.querySelector("sidebar");
   if (sidebar) sidebar.classList.remove("hamburger-active");
   document.getElementById("hamburger-enter").style.display = "block";
+  document.getElementById("hamburger-exit").style.display = "none";
 }

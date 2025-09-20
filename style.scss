@@ -32,6 +32,7 @@ $btn4: #4caf50 !default;
 $btn5: #8a2be2 !default;
 $btn6: #ff4081 !default;
 
+//*---- html, body, main, page, centering------*/
 html {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
 }
@@ -40,7 +41,70 @@ body {
   overflow: hidden;
   max-width: 1920px;
   margin: 0 auto;
+
+  main {
+    @include mif.flex-row;
+    width: 100%;
+    height: 100%;
+  }
+
+  .page-container {
+    width: 100%;
+
+    .page {
+      @include mif.flex-jc-ac;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 100%;
+      }
+
+      &::before {
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: cover;
+        z-index: -1;
+      }
+
+      &::after {
+        background: linear-gradient(
+          120deg,
+          rgba(11, 18, 31, 0.7) 0%,
+          rgba(11, 18, 31, 0.8) 50%,
+          rgba(11, 18, 31, 0.9) 100%
+        );
+        backdrop-filter: blur(3px);
+      }
+    }
+  }
+
+  .centering {
+    max-width: 80%;
+    z-index: 1;
+    overflow-y: auto;
+    padding: 0 50px;
+
+    @media (width <= 768px) {
+      max-width: 100%;
+    }
+
+    .my_container_1 {
+      @include mif.flex-col-ac;
+      gap: 20px;
+    }
+  }
 }
+
+//*---- heading ------*/
 h1,
 h2 {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
@@ -49,44 +113,43 @@ h1 {
   font-size: 2.5em;
   font-weight: 900;
   margin-top: 20px;
+  text-align: center;
   @include mre.gradient-text(
     linear-gradient(130deg, #ff7a18 0%, #af002d 41.07%, #319197 76.05%)
   );
+
+  @media (width <= 768px) {
+    font-size: 2em;
+  }
+  @media (width <= 520px) {
+    font-size: 1.8em;
+  }
+  @media (width <= 320px) {
+    font-size: 1.6em;
+  }
 }
 h2 {
   font-size: 4em;
   font-weight: 900;
-  margin-bottom: 20px;
+
+  @media (width <= 768px) {
+    font-size: 3em;
+  }
+  @media (width <= 520px) {
+    font-size: 2em;
+  }
+  @media (width <= 320px) {
+    font-size: 1.5em;
+  }
 }
+
+//*---- paragraph ----*/
 .p1 {
   color: $text-muted;
   font-size: 1.2em;
 }
 
-.centering {
-  @include mif.flex-jc-ac;
-  width: 100%;
-  height: 100%;
-}
-
-#hamburger {
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  font-size: 2em;
-  font-weight: 900;
-  color: $hamburger-exit;
-
-  @media (max-width: 768px) {
-    font-size: 2em;
-    color: $brand-cyan;
-  }
-  @media (max-width: 600px) {
-    font-size: 18px;
-    line-height: 15px;
-    color: rgb(var(--second-text-color));
-  }
-}
+//*---- Button, a ----*/
 button,
 a {
   border: none;
@@ -97,33 +160,14 @@ a {
   cursor: pointer;
 }
 
-#main {
-  display: flex;
-  flex-direction: row;
-  @media (max-width: 1200px) {
-    width: 100% !important;
-    height: 100% !important;
-  }
-  @media (max-width: 992px) {
-    width: 100%;
-    height: 100%;
-  }
-  @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
-  }
-  @media (max-width: 600px) {
-    width: 100%;
-    height: 100%;
-  }
-  @media (max-width: 671px) {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-  }
-}
-
-#hamburger {
+//*---- Hamburger ----*/
+.hamburger {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 2em;
+  font-weight: 900;
+  color: $hamburger-exit;
   position: absolute;
   top: 25px;
   left: 25px;
@@ -131,6 +175,20 @@ a {
   font-size: 25px;
   display: flex;
   display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+  @media (max-width: 768px) {
+    font-size: 2em;
+    color: $brand-cyan;
+  }
+  @media (max-width: 600px) {
+    font-size: 18px;
+    line-height: 15px;
+    color: rgb(var(--second-text-color));
+  }
+
   button {
     color: whitesmoke;
     padding: 0px;
@@ -142,12 +200,9 @@ a {
       display: block;
     }
   }
-  @media (max-width: 768px) {
-    display: block;
-  }
 }
 
-#hamburger-exit {
+.hamburger-exit {
   position: absolute;
   top: 25px;
   left: 60%;
@@ -159,40 +214,24 @@ a {
   display: none;
 }
 
-/* Styles continue below */
-#hamburger-exit {
-  position: absolute;
-  top: 25px;
-  left: 60%;
-  transform: translate(-20px, -0px);
-  z-index: 2;
-  background: inherit;
-  color: $hamburger-exit;
-  font-size: 25px;
-  display: none;
-}
 .hamburger-active {
   display: flex !important;
   transition: 0.5s all ease-in-out !important;
   width: 75px !important;
 }
 
-@media only screen and (max-width: 768px) {
-  #hamburger {
-    display: block;
-  }
-}
-
-/*------------------------------------*\
-            Button
-\*------------------------------------*/
-
+//*---- sideBar ----*/
 sidebar {
   position: relative;
   @include mif.flex-jc-ac;
   background-color: $button-bg;
   border-left: 1px solid $panel-border;
   border-right: 1px solid $panel-border;
+
+  @media (width <= 320px) {
+    display: none;
+  }
+
   nav {
     display: flex;
     flex-direction: column;
@@ -236,51 +275,9 @@ sidebar {
   }
 }
 
-/*------------------------------------*\
-               All Page's
-\*------------------------------------*/
-.page-container {
-  width: 100%;
-  height: 100%;
+//*---- All pages ----*/
 
-  .page {
-    position: relative;
-    z-index: 1;
-    @include mif.flex-jc-ac;
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-
-    &::before {
-      background-repeat: no-repeat;
-      background-position: left;
-      background-size: cover;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-   
-      background: linear-gradient(
-        120deg,
-        $main-bg 0%,
-        $main-bg 80%,
-        $main-bg 100%
-      );
-      backdrop-filter: blur(5px);
-    }
-  }
-
-  .centering {
-    @include mif.flex-col-jc-ac;
-  }
-}
-
-/*------------------------------------*\
-           Profile
-\*------------------------------------*/
+//profile
 .profile {
   &::before {
     background-image: url("picture/code.jpg");
@@ -444,9 +441,6 @@ sidebar {
 
   /* social icons */
   .social-icons {
-    margin-top: 20px;
-    z-index: 0;
-
     a {
       margin: 10px;
       font-size: 35px;
@@ -478,13 +472,21 @@ sidebar {
   }
 }
 
-/*------------------------------------*\
-        Information
-\*------------------------------------*/
-
+//Information
 .info {
   text-align: center;
   position: relative;
+  overflow-y: auto;
+
+  .centering {
+    @media (width <= 768px) {
+      max-width: 100%;
+    }
+  }
+  .my_container_1 {
+    @include mif.flex-col;
+    gap: 20px;
+  }
 
   &::before {
     background-image: url("picture/pikachu.png");
@@ -495,10 +497,7 @@ sidebar {
   }
 }
 
-/*------------------------------------*\
-           skills
-\*------------------------------------*/
-
+// skills
 .skills {
   &::before {
     background-image: url("vector/star.jpg");
@@ -623,9 +622,7 @@ sidebar {
   }
 }
 
-/*------------------------------------*\
-          hireMe
-\*------------------------------------*/
+// hireMe
 .hireMe {
   &::before {
     background-image: url("vector/global-map.jpg");
@@ -667,60 +664,7 @@ sidebar {
   }
 }
 
-/*------------------------------------*\
-         Terms and coondition Page-6
-\*------------------------------------*/
+// Terms and coondition Page-6
 .terms-condition::before {
   background-image: url("vector/leaf.png");
-  background-repeat: repeat;
-  background-size: 150px;
-  background-position: initial;
-  background-attachment: fixed;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
-  z-index: -1;
-}
-.terms-condition .centering {
-  text-align: center;
-  color: snow;
-}
-
-.terms-condition h1 {
-  font-size: 25px;
-  margin-bottom: 20px;
-  width: 80%;
-  color: $highlight-accent;
-  font-family: "Open Sans", sans-serif !important;
-}
-
-.terms-condition p {
-  margin-bottom: 50px;
-  font-style: italic;
-  width: 80%;
-  color: snow;
-  font-size: 19px;
-  letter-spacing: 2px;
-  line-height: 20px;
-  font-family: "Handlee", cursive;
-}
-
-.terms-condition h2 {
-  font-size: 25px;
-  margin-bottom: 20px;
-  width: 80%;
-  color: $highlight-accent;
-  font-family: "Open Sans", sans-serif;
-}
-
-.terms-condition a {
-  color: snow;
-  font-size: 20px;
-  font-family: "Handlee", cursive;
-  font-style: italic;
 }

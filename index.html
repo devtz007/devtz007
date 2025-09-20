@@ -29,14 +29,18 @@
     <title>About Mohaiminul Tazim devtz007</title>
   </head>
   <body id="body">
-    <div id="main">
-      <div id="hamburger">
+    <main id="main">
+      <div class="hamburger">
         <button id="hamburger-enter" onclick="clickBurger()">
           <i class="fas fa-bars"></i>
         </button>
       </div>
       <sidebar>
-        <button id="hamburger-exit" onclick="clickCross()">
+        <button
+          id="hamburger-exit"
+          class="hamburger-exit"
+          onclick="clickCross()"
+        >
           <i class="fab fa-xing"></i>
         </button>
         <nav class="nav-bar">
@@ -60,63 +64,68 @@
       <div class="page-container">
         <section id="page1" class="profile page">
           <div class="centering">
-            <div class="profile-image">
-              <div class="clock">
-                <div class="clock-center"></div>
-                <div id="seconds">
-                  <div class="half1"></div>
-                  <div class="half2"></div>
+            <div class="my_container_1">
+              <div class="profile-image">
+                <div class="clock">
+                  <div class="clock-center"></div>
+                  <div id="seconds">
+                    <div class="half1"></div>
+                    <div class="half2"></div>
+                  </div>
+                  <div id="minutes">
+                    <div class="half1"></div>
+                    <div class="half2"></div>
+                  </div>
+                  <div id="hours">
+                    <div class="half1"></div>
+                    <div class="half2"></div>
+                  </div>
+                  <div class="twelve">12</div>
+                  <div class="three">3</div>
+                  <div class="six">6</div>
+                  <div class="nine">9</div>
                 </div>
-                <div id="minutes">
-                  <div class="half1"></div>
-                  <div class="half2"></div>
-                </div>
-                <div id="hours">
-                  <div class="half1"></div>
-                  <div class="half2"></div>
-                </div>
-                <div class="twelve">12</div>
-                <div class="three">3</div>
-                <div class="six">6</div>
-                <div class="nine">9</div>
               </div>
-            </div>
-            <h1>Mohaiminul Tazim (devtz007)</h1>
-            <div class="social-icons">
-              <a target="_blank" href="https://www.facebook.com/devtz007"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a target="_blank" href="https://x.com/devtz007"
-                ><i class="fab fa-solid fa-x"></i>
-              </a>
-              <a target="_blank" href="https://www.linkedin.com/in/devtz007/"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a target="_blank" href="mailto:dev.mohaiminul@gmail.com"
-                ><i class="fas fa-mail-bulk"></i
-              ></a>
+              <h1>Mohaiminul Tazim (devtz007)</h1>
+              <div class="social-icons">
+                <a target="_blank" href="https://www.facebook.com/devtz007"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a target="_blank" href="https://x.com/devtz007"
+                  ><i class="fab fa-solid fa-x"></i>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/devtz007/"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+                <a target="_blank" href="mailto:dev.mohaiminul@gmail.com"
+                  ><i class="fas fa-mail-bulk"></i
+                ></a>
+              </div>
             </div>
           </div>
         </section>
         <section id="page2" class="info page">
           <div class="centering">
-            <h2>About Me</h2>
-            <p class="p1">
-              Full Stack Web Developer specializing in modern web technologies
-              and secure software development. Proficient in front-end
-              technologies, frameworks, and libraries such as Next.js 15, React,
-              TypeScript, Vanilla JavaScript, HTML5, CSS, SCSS, Tailwind, and
-              Bootstrap. Skilled in back-end development using Node.js, PHP,
-              MySQL, and SQL, with strong experience in RESTful APIs, JSON,
-              AJAX, and custom WordPress theme development. Possesses excellent
-              expertise in cybersecurity, ensuring software is built with robust
-              security practices while identifying vulnerabilities in software
-              and websites through bug hunting. Experienced with Git, GitHub,
-              DevOps, and collaborative development workflows. Also familiar
-              with UI/UX design tools such as Figma. Committed to building
-              performant, scalable, and secure web applications while solving
-              security flaws in websites.
-            </p>
+            <div class="my_container_1">
+              <h2>About Me</h2>
+              <p class="p1">
+                Full Stack Web Developer specializing in modern web technologies
+                and secure software development. Proficient in front-end
+                technologies, frameworks, and libraries such as Next.js 15,
+                React, TypeScript, Vanilla JavaScript, HTML5, CSS, SCSS,
+                Tailwind, and Bootstrap. Skilled in back-end development using
+                Node.js, PHP, MySQL, and SQL, with strong experience in RESTful
+                APIs, JSON, AJAX, and custom WordPress theme development.
+                Possesses excellent expertise in cybersecurity, ensuring
+                software is built with robust security practices while
+                identifying vulnerabilities in software and websites through bug
+                hunting. Experienced with Git, GitHub, DevOps, and collaborative
+                development workflows. Also familiar with UI/UX design tools
+                such as Figma. Committed to building performant, scalable, and
+                secure web applications while solving security flaws in
+                websites.
+              </p>
+            </div>
           </div>
         </section>
         <section id="page3" class="skills page">
@@ -360,7 +369,7 @@
           </div>
         </section>
       </div>
-    </div>
+    </main>
     <script src="scripts.js"></script>
   </body>
 </html>
