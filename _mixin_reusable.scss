@@ -1,4 +1,5 @@
 //_mixin_reusable.scss
+@use "./mixin_flex_lb.module" as mif;
 
 // Gradient text mixin
 @mixin gradient-text($gradient) {
@@ -43,4 +44,37 @@
   animation: #{$name} $duration infinite alternate;
 }
 
+@mixin btn-type-1(
+  $text-color: #25d366,
+  $border-color: #25d366,
+  $bg-color: #292f33,
+  $hover-bg: #ea4335,
+  $hover-color: white
+) {
+  @include mif.flex-row-jc-ac;
+  gap: 10px;
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 8px;
+  color: $text-color;
+  border: 1px solid $border-color;
 
+  @media (width <= 768px) {
+    font-size: 1em;
+  }
+  @media (width <= 520px) {
+    padding: 8px 20px;
+  }
+  @media (width <= 320px) {
+    font-size: 0.9em;
+    padding: 6px 18px;
+  }
+
+  &:hover {
+    background: $hover-bg;
+    color: $hover-color;
+    transform: translateY(-2px);
+  }
+}

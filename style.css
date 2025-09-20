@@ -570,7 +570,7 @@ sidebar nav .btn-active {
   /* social icons */
 }
 .profile::before {
-  background-image: url("picture/code.jpg");
+  background-image: url("./assets//media/code.jpg");
 }
 .profile .profile-image {
   display: flex;
@@ -617,7 +617,7 @@ sidebar nav .btn-active {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url("picture/portfolio.jpg");
+  background-image: url("./assets/media/mohaiminul_tazin.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -825,7 +825,7 @@ sidebar nav .btn-active {
   transition: all 0.6s ease;
 }
 .profile .social-icons a:hover {
-  color: #88d958 !important;
+  color: #88d958;
 }
 .profile .social-icons a:nth-child(1) {
   color: #1877f2;
@@ -835,9 +835,6 @@ sidebar nav .btn-active {
 }
 .profile .social-icons a:nth-child(3) {
   color: #0a66c2;
-}
-.profile .social-icons a:nth-child(4) {
-  color: #0072c6;
 }
 .profile .social-icons a i {
   font-size: 2em;
@@ -857,6 +854,41 @@ sidebar nav .btn-active {
     font-size: 1.4em;
   }
 }
+.profile .cv-download {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 8px;
+  color: #25d366;
+  border: 1px solid #25d366;
+}
+@media (width <= 768px) {
+  .profile .cv-download {
+    font-size: 1em;
+  }
+}
+@media (width <= 520px) {
+  .profile .cv-download {
+    padding: 8px 20px;
+  }
+}
+@media (width <= 320px) {
+  .profile .cv-download {
+    font-size: 0.9em;
+    padding: 6px 18px;
+  }
+}
+.profile .cv-download:hover {
+  background: #25d366;
+  color: white;
+  transform: translateY(-2px);
+}
 
 .info {
   text-align: center;
@@ -864,7 +896,7 @@ sidebar nav .btn-active {
   overflow-y: auto;
 }
 .info::before {
-  background-image: url("picture/info.jpg");
+  background-image: url("./assets/media/info.jpg");
 }
 .info .centering {
   max-height: 80%;
@@ -879,7 +911,7 @@ sidebar nav .btn-active {
 }
 
 .skills::before {
-  background-image: url("./picture/skills.jpg");
+  background-image: url("./assets/media/skills.jpg");
 }
 .skills .centering {
   max-height: 80%;
@@ -1024,35 +1056,39 @@ sidebar nav .btn-active {
   color: #4caf50;
 }
 .hireMe .hire-me-btns {
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 15px;
 }
-.hireMe .hire-me-btns a {
-  outline: none;
-  text-decoration: none;
-  color: #e5edf7;
-  font-size: 18px;
-  padding: 15px 25px;
-  background: #292f33;
-  border: 1px solid #292f33;
+.hireMe .hire-me-btns a:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  padding: 10px 22px;
   transition: all 0.3s ease;
   text-align: center;
   border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 200px;
-  justify-content: center;
-}
-.hireMe .hire-me-btns a i {
-  font-size: 20px;
-}
-.hireMe .hire-me-btns a:nth-child(1) {
   color: #ea4335;
   border: 1px solid #ea4335;
+}
+@media (width <= 768px) {
+  .hireMe .hire-me-btns a:nth-child(1) {
+    font-size: 1em;
+  }
+}
+@media (width <= 520px) {
+  .hireMe .hire-me-btns a:nth-child(1) {
+    padding: 8px 20px;
+  }
+}
+@media (width <= 320px) {
+  .hireMe .hire-me-btns a:nth-child(1) {
+    font-size: 0.9em;
+    padding: 6px 18px;
+  }
 }
 .hireMe .hire-me-btns a:nth-child(1):hover {
   background: #ea4335;
@@ -1060,16 +1096,39 @@ sidebar nav .btn-active {
   transform: translateY(-2px);
 }
 .hireMe .hire-me-btns a:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  transition: all 0.3s ease;
+  text-align: center;
+  border-radius: 8px;
   color: #25d366;
   border: 1px solid #25d366;
+}
+@media (width <= 768px) {
+  .hireMe .hire-me-btns a:nth-child(2) {
+    font-size: 1em;
+  }
+}
+@media (width <= 520px) {
+  .hireMe .hire-me-btns a:nth-child(2) {
+    padding: 8px 20px;
+  }
+}
+@media (width <= 320px) {
+  .hireMe .hire-me-btns a:nth-child(2) {
+    font-size: 0.9em;
+    padding: 6px 18px;
+  }
 }
 .hireMe .hire-me-btns a:nth-child(2):hover {
   background: #25d366;
   color: white;
   transform: translateY(-2px);
-}
-.hireMe .hire-me-btns a:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .terms-condition h2 {

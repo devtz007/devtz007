@@ -319,7 +319,7 @@ sidebar {
 //profile
 .profile {
   &::before {
-    background-image: url("picture/code.jpg");
+    background-image: url("./assets//media/code.jpg");
   }
 
   .profile-image {
@@ -357,7 +357,7 @@ sidebar {
       position: absolute;
       top: 0;
       left: 0;
-      background-image: url("picture/portfolio.jpg");
+      background-image: url("./assets/media/mohaiminul_tazin.png");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -550,7 +550,7 @@ sidebar {
       transition: all 0.6s ease;
 
       &:hover {
-        color: #88d958 !important;
+        color: #88d958;
       }
 
       &:nth-child(1) {
@@ -563,10 +563,6 @@ sidebar {
 
       &:nth-child(3) {
         color: $social-linkedin;
-      }
-
-      &:nth-child(4) {
-        color: $social-email;
       }
 
       i {
@@ -583,6 +579,16 @@ sidebar {
       }
     }
   }
+
+  .cv-download {
+    @include mre.btn-type-1(
+      $text-color: #25d366,
+      $border-color: #25d366,
+      $bg-color: #292f33,
+      $hover-bg: #25d366,
+      $hover-color: white
+    );
+  }
 }
 
 //Information
@@ -591,7 +597,7 @@ sidebar {
   position: relative;
   overflow-y: auto;
   &::before {
-    background-image: url("picture/info.jpg");
+    background-image: url("./assets/media/info.jpg");
   }
 
   .centering {
@@ -610,7 +616,7 @@ sidebar {
 // skills
 .skills {
   &::before {
-    background-image: url("./picture/skills.jpg");
+    background-image: url("./assets/media/skills.jpg");
   }
 
   .centering {
@@ -778,57 +784,36 @@ sidebar {
   }
 
   .hire-me-btns {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include mif.flex-col;
     gap: 15px;
 
     a {
-      outline: none;
-      text-decoration: none;
-      color: $text-primary;
-      font-size: 18px;
-      padding: 15px 25px;
-      background: $panel-border;
-      border: 1px solid $panel-border;
-      transition: all 0.3s ease;
-      text-align: center;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 200px;
-      justify-content: center;
-
-      i {
-        font-size: 20px;
-      }
-
       &:nth-child(1) {
-        color: #ea4335;
-        border: 1px solid #ea4335;
-
-        &:hover {
-          background: #ea4335;
-          color: white;
-          transform: translateY(-2px);
-        }
+        @include mre.btn-type-1(
+          $text-color: #ea4335,
+          // default text color
+          $border-color: #ea4335,
+          // default border color
+          $bg-color: #292f33,
+          // default background
+          $hover-bg: #ea4335,
+          // default hover background
+          $hover-color: white
+        );
       }
 
       &:nth-child(2) {
-        color: #25d366;
-        border: 1px solid #25d366;
-
-        &:hover {
-          background: #25d366;
-          color: white;
-          transform: translateY(-2px);
-        }
-      }
-
-      &:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        @include mre.btn-type-1(
+          $text-color: #25d366,
+          // default text color
+          $border-color: #25d366,
+          // default border color
+          $bg-color: #292f33,
+          // default background
+          $hover-bg: #25d366,
+          // default hover background
+          $hover-color: white
+        );
       }
     }
   }
