@@ -9,7 +9,7 @@ autoResizeDiv();
 
 //Page Show-hide and color change
 // Colors for each page
-const pageColors = ["#21252B", "#21252B", "#21252B", "#21252B", "#445577"];
+const pageColors = ["#ff7a18", "#3097bf", "#ed143d", "#4caf50", "#8faadc"];
 
 // Hide all pages except the first
 const pages = document.querySelectorAll(".page");
@@ -21,7 +21,7 @@ pages.forEach((page, index) => {
 const buttons = document.querySelectorAll(".page-btn");
 buttons.forEach((btn, index) => {
   if (index === 0) {
-    btn.style.backgroundColor = pageColors[0];
+    btn.style.backgroundColor = pageColors[0] + "33"; // Adding 20% opacity
   }
 });
 
@@ -45,7 +45,7 @@ function switchPage(id) {
   buttons.forEach((btn, i) => {
     const icon = btn.querySelector("i");
     const isActive = i + 1 === id;
-    btn.style.backgroundColor = isActive ? pageColors[i] : "";
+    btn.style.backgroundColor = isActive ? pageColors[i] + "33" : ""; // Adding 20% opacity
     icon.classList.toggle("btn-active", isActive);
   });
 
@@ -117,12 +117,12 @@ function clickBurger() {
   const sidebar = document.querySelector("sidebar");
   if (sidebar) sidebar.classList.add("hamburger-active");
   document.getElementById("hamburger-enter").style.display = "none";
-  document.getElementById("hamburger-exit").style.display = "block";
+  document.getElementById("hamburger-exit").style.display = "flex";
 }
 
 function clickCross() {
   const sidebar = document.querySelector("sidebar");
   if (sidebar) sidebar.classList.remove("hamburger-active");
-  document.getElementById("hamburger-enter").style.display = "block";
+  document.getElementById("hamburger-enter").style.display = "flex";
   document.getElementById("hamburger-exit").style.display = "none";
 }

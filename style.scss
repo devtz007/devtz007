@@ -27,18 +27,17 @@ $hamburger-color: #3097bf !default;
 $button-bg: transparent !default;
 $btn1: #ff7a18 !default;
 $btn2: #3097bf !default;
-$btn3: crimson !default;
+$btn3: #ed143d !default;
 $btn4: #4caf50 !default;
-$btn5: #8a2be2 !default;
-$btn6: #ff4081 !default;
+$btn5: #8faadc !default;
 
 //*---- html, body, main, page, centering------*/
 html {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 body {
   background: $main-bg;
-  overflow: hidden;
   max-width: 1920px;
   margin: 0 auto;
 
@@ -46,6 +45,7 @@ body {
     @include mif.flex-row;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
 
   .page-container {
@@ -88,13 +88,16 @@ body {
   }
 
   .centering {
-    max-width: 80%;
+    @include mif.flex-col;
+    gap: 50px;
+    width: 70%;
     z-index: 1;
+    overflow: hidden;
     overflow-y: auto;
     padding: 0 50px;
 
     @media (width <= 768px) {
-      max-width: 100%;
+      width: 100%;
     }
 
     .my_container_1 {
@@ -110,7 +113,7 @@ h2 {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 h1 {
-  font-size: 2.5em;
+  font-size: 2.2em;
   font-weight: 900;
   margin-top: 20px;
   text-align: center;
@@ -119,18 +122,19 @@ h1 {
   );
 
   @media (width <= 768px) {
-    font-size: 2em;
-  }
-  @media (width <= 520px) {
     font-size: 1.8em;
   }
-  @media (width <= 320px) {
+  @media (width <= 520px) {
     font-size: 1.6em;
+  }
+  @media (width <= 320px) {
+    font-size: 1.4em;
   }
 }
 h2 {
   font-size: 4em;
   font-weight: 900;
+  text-align: center;
 
   @media (width <= 768px) {
     font-size: 3em;
@@ -147,6 +151,31 @@ h2 {
 .p1 {
   color: $text-muted;
   font-size: 1.2em;
+
+  @media (width <= 768px) {
+    font-size: 1.1em;
+  }
+  @media (width <= 520px) {
+    font-size: 1em;
+  }
+  @media (width <= 320px) {
+    font-size: 0.9em;
+  }
+}
+
+.p2 {
+  color: $text-muted;
+  font-size: 1.3em;
+
+  @media (width <= 768px) {
+    font-size: 1.1em;
+  }
+  @media (width <= 520px) {
+    font-size: 1em;
+  }
+  @media (width <= 320px) {
+    font-size: 0.9em;
+  }
 }
 
 //*---- Button, a ----*/
@@ -204,10 +233,9 @@ a {
 
 .hamburger-exit {
   position: absolute;
-  top: 25px;
-  left: 60%;
-  transform: translate(-20px, -0px);
-  z-index: 2;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   font-family: var(--font-heading);
   color: $hamburger-exit;
   font-size: 25px;
@@ -216,8 +244,6 @@ a {
 
 .hamburger-active {
   display: flex !important;
-  transition: 0.5s all ease-in-out !important;
-  width: 75px !important;
 }
 
 //*---- sideBar ----*/
@@ -228,13 +254,14 @@ sidebar {
   border-left: 1px solid $panel-border;
   border-right: 1px solid $panel-border;
 
-  @media (width <= 320px) {
+  @media (width <= 520px) {
     display: none;
   }
 
   nav {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     button {
       @include mif.flex-jc-ac;
@@ -244,7 +271,12 @@ sidebar {
       text-align: center;
       transition: background 0.3s ease-in-out;
 
-      cursor: pointer;
+      @media (width <= 520px) {
+        padding: 20px;
+      }
+      @media (width <= 320px) {
+        padding: 15px;
+      }
 
       &:nth-child(1) {
         color: $btn1;
@@ -261,12 +293,19 @@ sidebar {
       &:nth-child(5) {
         color: $btn5;
       }
-      &:nth-child(6) {
-        color: $btn6;
-      }
+
       i {
         font-size: 1.2em;
         transition: transform 0.6s ease-in-out;
+        @media (width <= 768px) {
+          font-size: 1.1em;
+        }
+        @media (width <= 520px) {
+          font-size: 1em;
+        }
+        @media (width <= 320px) {
+          font-size: 0.9em;
+        }
       }
     }
     .btn-active {
@@ -285,12 +324,6 @@ sidebar {
 
   .profile-image {
     @include mif.flex-jc-ac;
-
-    img {
-      @media (width <= 600px) {
-        width: 180px;
-      }
-    }
   }
 
   /* clock */
@@ -302,8 +335,20 @@ sidebar {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
     background: $panel-bg;
+
+    @media (width <= 768px) {
+      height: 225px;
+      width: 225px;
+    }
+    @media (width <= 520px) {
+      height: 200px;
+      width: 200px;
+    }
+    @media (width <= 320px) {
+      height: 150px;
+      width: 150px;
+    }
 
     &::before {
       width: 100%;
@@ -328,11 +373,6 @@ sidebar {
       }
     }
 
-    @media (width <= 600px) {
-      height: 250px;
-      width: 250px;
-    }
-
     /* Time numbers */
     .three,
     .six,
@@ -342,7 +382,17 @@ sidebar {
       font-size: 1.2em;
       font-weight: 700;
       color: $brand-pink;
-      opacity: 0.2;
+      opacity: 0;
+
+      @media (width <= 768px) {
+        font-size: 1.1em;
+      }
+      @media (width <= 520px) {
+        font-size: 1em;
+      }
+      @media (width <= 320px) {
+        font-size: 1em;
+      }
     }
     .three {
       top: 50%;
@@ -376,6 +426,19 @@ sidebar {
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 4;
+
+      @media (width <= 768px) {
+        width: 12px;
+        height: 12px;
+      }
+      @media (width <= 520px) {
+        width: 11px;
+        height: 11px;
+      }
+      @media (width <= 320px) {
+        width: 10px;
+        height: 10px;
+      }
     }
 
     /*seconds*/
@@ -388,6 +451,16 @@ sidebar {
       transform-origin: 50% 50%;
       display: flex;
       flex-direction: column;
+
+      @media (width <= 768px) {
+        height: 200px;
+      }
+      @media (width <= 520px) {
+        height: 180px;
+      }
+      @media (width <= 320px) {
+        height: 135px;
+      }
       .half1 {
         background: $brand-pink;
         height: 50%;
@@ -407,6 +480,20 @@ sidebar {
       position: absolute;
       z-index: 3;
       transform-origin: 50% 50%;
+
+      @media (width <= 768px) {
+        height: 165px;
+        width: 1.8px;
+      }
+      @media (width <= 520px) {
+        height: 145px;
+        width: 1.8px;
+      }
+      @media (width <= 320px) {
+        height: 110px;
+        width: 1.5px;
+      }
+
       .half1 {
         background: #afd174;
         height: 50%;
@@ -426,6 +513,20 @@ sidebar {
       position: absolute;
       z-index: 2;
       transform-origin: 50% 50%;
+
+      @media (width <= 768px) {
+        height: 135px;
+        width: 2.5px;
+      }
+      @media (width <= 520px) {
+        height: 120px;
+        width: 2.5px;
+      }
+      @media (width <= 320px) {
+        height: 90px;
+        width: 2px;
+      }
+
       .half1 {
         background: #c2c9cf;
         height: 50%;
@@ -441,13 +542,12 @@ sidebar {
 
   /* social icons */
   .social-icons {
+    @include mif.flex-row-ac;
+    gap: 10px;
     a {
-      margin: 10px;
-      font-size: 35px;
       text-align: center;
       color: $text-primary;
-      transition: all 0.8s ease;
-      cursor: pointer;
+      transition: all 0.6s ease;
 
       &:hover {
         color: #88d958 !important;
@@ -468,6 +568,19 @@ sidebar {
       &:nth-child(4) {
         color: $social-email;
       }
+
+      i {
+        font-size: 2em;
+        @media (width <= 768px) {
+          font-size: 1.8em;
+        }
+        @media (width <= 520px) {
+          font-size: 1.6em;
+        }
+        @media (width <= 320px) {
+          font-size: 1.4em;
+        }
+      }
     }
   }
 }
@@ -477,19 +590,16 @@ sidebar {
   text-align: center;
   position: relative;
   overflow-y: auto;
+  &::before {
+    background-image: url("picture/info.jpg");
+  }
 
   .centering {
-    @media (width <= 768px) {
-      max-width: 100%;
-    }
+    max-height: 80%;
   }
   .my_container_1 {
     @include mif.flex-col;
     gap: 20px;
-  }
-
-  &::before {
-    background-image: url("picture/pikachu.png");
   }
 
   h2 {
@@ -500,74 +610,100 @@ sidebar {
 // skills
 .skills {
   &::before {
-    background-image: url("vector/star.jpg");
+    background-image: url("./picture/skills.jpg");
   }
 
+  .centering {
+    max-height: 80%;
+  }
   h2 {
     color: crimson;
   }
   .skill-bar {
-    width: 50%;
+    width: 100%;
 
     p {
-      color: $text-muted;
+      margin-bottom: 5px;
+    }
+
+    .skill-container {
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid #202837;
+      border-radius: 99999px;
+      background: linear-gradient(
+        120deg,
+        rgba(11, 18, 31, 0.3) 0%,
+        rgba(11, 18, 31, 0.4) 50%,
+        rgba(11, 18, 31, 0.5) 100%
+      );
+
+      .skill {
+        @include mif.flex-je-ac;
+        height: 2em;
+        text-align: right;
+        padding: 0px 10px;
+        color: white;
+        white-space: nowrap;
+
+        @media (width <= 768px) {
+          font-size: 1.1em;
+        }
+        @media (width <= 520px) {
+          font-size: 1em;
+        }
+        @media (width <= 320px) {
+          font-size: 0.9em;
+        }
+      }
     }
   }
 
-  .skill-container {
-    background: $text-muted;
-    overflow: hidden;
-    margin-bottom: 10px;
-    border: 1px solid $text-muted;
-    border-radius: 10px;
-  }
-
-  .skill {
-    text-align: right;
-    padding: 2px 5px;
-    color: $text-muted;
-    font-size: 1em;
-  }
-
   // Skill bars
-  .html5 {
-    background: #522e74;
+  .frontend {
+    background: linear-gradient(135deg, #61dafb, #007acc);
     width: 90%;
-    animation: animate-HTML 4s;
+    animation: animate-frontend 4s;
   }
 
-  .css {
-    background: #b9c406;
+  .styling {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    width: 90%;
+    animation: animate-styling 4s;
+  }
+
+  .backend {
+    background: linear-gradient(135deg, #777bb4, #4f46e5);
+    width: 85%;
+    animation: animate-backend 4s;
+  }
+
+  .wordpress {
+    background: linear-gradient(135deg, #21759b, #23282d);
+    width: 85%;
+    animation: animate-wordpress 4s;
+  }
+
+  .security {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
     width: 80%;
-    animation: animate-CSS 4s;
+    animation: animate-security 4s;
   }
 
-  .javaScript {
-    background: #1b2c58;
-    width: 60%;
-    animation: animate-JS 4s;
+  .version-control {
+    background: linear-gradient(135deg, #24292e, #0366d6);
+    width: 90%;
+    animation: animate-version-control 4s;
   }
 
-  .php {
-    background: #107150;
-    width: 65%;
-    animation: animate-PHP 4s;
-  }
-
-  .mySqli {
-    background: #1ecfd5;
-    width: 70%;
-    animation: animate-MYSQLI 4s;
-  }
-
-  .photoShop {
-    background: #5b868d;
-    width: 20%;
-    animation: animate-PS 4s;
+  .design {
+    background: linear-gradient(135deg, #f24e1e, #ff7262);
+    width: 90%;
+    animation: animate-design 4s;
   }
 
   // Keyframes
-  @keyframes animate-HTML {
+  @keyframes animate-frontend {
     from {
       width: 10px;
     }
@@ -576,7 +712,34 @@ sidebar {
     }
   }
 
-  @keyframes animate-CSS {
+  @keyframes animate-styling {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes animate-backend {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 85%;
+    }
+  }
+
+  @keyframes animate-wordpress {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 85%;
+    }
+  }
+
+  @keyframes animate-security {
     from {
       width: 10px;
     }
@@ -585,39 +748,21 @@ sidebar {
     }
   }
 
-  @keyframes animate-JS {
+  @keyframes animate-version-control {
     from {
       width: 10px;
     }
     to {
-      width: 60%;
+      width: 90%;
     }
   }
 
-  @keyframes animate-PHP {
+  @keyframes animate-design {
     from {
       width: 10px;
     }
     to {
-      width: 65%;
-    }
-  }
-
-  @keyframes animate-MYSQLI {
-    from {
-      width: 10px;
-    }
-    to {
-      width: 70%;
-    }
-  }
-
-  @keyframes animate-PS {
-    from {
-      width: 10px;
-    }
-    to {
-      width: 20%;
+      width: 90%;
     }
   }
 }
@@ -634,37 +779,71 @@ sidebar {
 
   .hire-me-btns {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 
     a {
       outline: none;
       text-decoration: none;
       color: $text-primary;
       font-size: 18px;
-      padding: 10px;
-      margin: 10px;
+      padding: 15px 25px;
       background: $panel-border;
       border: 1px solid $panel-border;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
       text-align: center;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 200px;
+      justify-content: center;
+
+      i {
+        font-size: 20px;
+      }
 
       &:nth-child(1) {
-        color: #6fda44;
-        border: 1px solid #6fda44;
+        color: #ea4335;
+        border: 1px solid #ea4335;
 
         &:hover {
-          background: #6fda44;
-          color: $text-primary;
+          background: #ea4335;
+          color: white;
+          transform: translateY(-2px);
+        }
+      }
+
+      &:nth-child(2) {
+        color: #25d366;
+        border: 1px solid #25d366;
+
+        &:hover {
+          background: #25d366;
+          color: white;
+          transform: translateY(-2px);
         }
       }
 
       &:hover {
-        background: $panel-border;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
     }
   }
 }
 
-// Terms and coondition Page-6
-.terms-condition::before {
-  background-image: url("vector/leaf.png");
+// Terms and coondition
+.terms-condition {
+  h2 {
+    color: #8faadc;
+  }
+  p {
+    text-align: center;
+  }
+  a {
+    font-size: 1.3em;
+    color: $text-muted;
+  }
 }
